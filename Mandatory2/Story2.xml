@@ -1,0 +1,29 @@
+<?xml version = "1.0" ?>	
+	
+<!DOCTYPE testcases SYSTEM "ATDD.dtd"[
+	<!ENTITY % story1   "IGNORE">
+	<!ENTITY % story2 "INCLUDE">
+	]>
+	
+	<testcases>
+		<testcase story="2">
+			<given>Said materials are not in stock </given>
+			<when>Actor ordering materials </when>
+			<item>Lenovo laptop </item>
+			<address>København </address>
+			<then>Shipping is not authorized. No actions taken </then>
+		</testcase>
+		
+		<testcase story="2">
+			<given>Depot of given item type is not empty </given>
+			<when>Actor is Shipping </when>
+			<item>Lenovo laptop </item>
+			<address>København </address>
+			<item>Lenovo </item>
+			<then> is shipped to </then>
+			<address>København </address>			
+		</testcase>
+		
+
+	
+	</testcases>

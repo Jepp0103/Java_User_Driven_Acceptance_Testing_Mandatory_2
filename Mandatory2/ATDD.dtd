@@ -1,0 +1,22 @@
+
+ 	<!ATTLIST story1case story CDATA #FIXED "1">
+ 	
+ 	<!ATTLIST story2case story CDATA #FIXED "2">
+ 	
+	
+	<!ELEMENT testcases  (story1case*,story2case*,story3case*) >
+	
+	<!ELEMENT story1case (given+,when+,item,address,item?,then+,address?)>
+
+	<!ELEMENT story2case (given+,when+,material+,then+)>
+	
+
+	
+   	<!ELEMENT given (#PCDATA)>
+	<!ELEMENT when (#PCDATA)>
+	<!ELEMENT then (#PCDATA)>
+   	<!ELEMENT item (#PCDATA)>
+   	<!ELEMENT address (#PCDATA)>
+   	<!ELEMENT material (#PCDATA)>
+   	
+	
