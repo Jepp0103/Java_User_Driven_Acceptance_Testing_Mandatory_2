@@ -24,7 +24,7 @@ public class Main {
         doc.getDocumentElement().normalize();
         System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
         
-        NodeList cases[]= { doc.getElementsByTagName("story1case"),doc.getElementsByTagName("story2case"), doc.getElementsByTagName("story3case")};
+        NodeList cases[]= { doc.getElementsByTagName("shipitem"),doc.getElementsByTagName("ordermaterials"), doc.getElementsByTagName("queryitems")};
       
         for (NodeList caseList : cases) { 
 	        for (int temp = 0; temp < caseList.getLength(); temp++) {
@@ -34,17 +34,17 @@ public class Main {
 	                switch (eElement.getAttribute("story")) {
 	                	case "1" :
 	                		System.out.println("Test case for user story 1");
-	                		System.out.println(parseTestcaseForStory1(eElement));
+	                		System.out.println(parseTestcaseForShipItem(eElement));
 	                		System.out.println();
 	                		break;
 		            	case "2" :
 		            		System.out.println("Test case for user story 2");
-		            		System.out.println(parseTestcaseForStory2(eElement));
+		            		System.out.println(parseTestcaseForOrderMaterials(eElement));
 		            		System.out.println();
 		            		break;
 		            	case "3" :
 		            		System.out.println("Test case for user story 3");
-		            		System.out.println(parseTestcaseForStory1(eElement));
+		            		System.out.println(parseTestcaseForQueryItems(eElement));
 		            		System.out.println();
 		            		break;
 	                }
@@ -57,7 +57,44 @@ public class Main {
                       
     }
 
-	private static String parseTestcaseForStory2(Element eElement) {
+	private static String parseTestcaseForQueryItems(Element eElement) {
+        NodeList givenList = eElement.getElementsByTagName("given");
+        NodeList whenList = eElement.getElementsByTagName("when");
+        NodeList thenList = eElement.getElementsByTagName("then");
+        NodeList itemList = eElement.getElementsByTagName("item");
+        
+        Node node;
+        
+        String humantext = "If ";
+        for (int i = 0; i < whenList.getLength(); i++) {
+        	if (i==1) {humantext+=" and ";}
+            node = whenList.item(i);
+            humantext+=node.getTextContent();
+        }
+        humantext+=" ";
+        node = itemList.item(0);
+        humantext+=node.getTextContent();
+        
+        
+        humantext += ", and ";
+        for (int i = 0; i < givenList.getLength(); i++) {
+        	if (i==1) {humantext+=" and ";}
+            node = givenList.item(i);
+            humantext+=node.getTextContent();
+        }
+        
+        
+        humantext+= ", then ";
+        for (int i = 0; i < thenList.getLength(); i++) {
+        	if (i==1) {humantext+=" and ";}
+            node = thenList.item(i);
+            humantext+=node.getTextContent();
+	
+        }
+        return humantext;
+	}
+
+	private static String parseTestcaseForOrderMaterials(Element eElement) {
         NodeList givenList = eElement.getElementsByTagName("given");
         NodeList whenList = eElement.getElementsByTagName("when");
         NodeList thenList = eElement.getElementsByTagName("then");
@@ -95,7 +132,7 @@ public class Main {
 		return humantext;
 	}
 
-	private static String parseTestcaseForStory1(Element eElement) {
+	private static String parseTestcaseForShipItem(Element eElement) {
         NodeList givenList = eElement.getElementsByTagName("given");
         NodeList whenList = eElement.getElementsByTagName("when");
         NodeList thenList = eElement.getElementsByTagName("then");

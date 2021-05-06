@@ -1,0 +1,32 @@
+grammar org.example.domainmodel.Domainmodel with
+                                      org.eclipse.xtext.common.Terminals
+ 
+generate domainmodel "http://www.example.org/domainmodel/Domainmodel"
+ 
+Model:
+    declarations+=Declaration*;
+  
+Declaration:
+   	Ship | Ordermaterials | Queryitems;
+
+Ship :
+	'Given' conditions+=Condition (' and ' conditions+=Condition)* ' when ' action+=Action item+=Item ' to ' address+=Address 
+;
+Ordermaterials :
+	"a"
+;
+Queryitems :
+	"b"
+;
+Item :
+	name=ID
+;
+Address :
+	name=ID
+;
+Condition :
+	name=ID
+;
+Action :
+	name=ID
+;

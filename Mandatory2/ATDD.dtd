@@ -1,14 +1,18 @@
 
- 	<!ATTLIST story1case story CDATA #FIXED "1">
+ 	<!ATTLIST shipitem story CDATA #FIXED "1">
  	
- 	<!ATTLIST story2case story CDATA #FIXED "2">
+ 	<!ATTLIST ordermaterials story CDATA #FIXED "2">
  	
+ 	<!ATTLIST queryitems story CDATA #FIXED "3">
 	
-	<!ELEMENT testcases  (story1case*,story2case*,story3case*) >
+	<!ELEMENT testcases  (shipitem*,ordermaterials*,queryitems*) >
 	
-	<!ELEMENT story1case (given+,when+,item,address,item?,then+,address?)>
+	<!ELEMENT shipitem (given+,when+,item,address,item?,then+,address?)>
 
-	<!ELEMENT story2case (given+,when+,material+,then+)>
+	<!ELEMENT ordermaterials (given+,when+,material+,then+)>
+	
+	<!ELEMENT queryitems (given+,when+,item,then+)>
+	
 	
 
 	
