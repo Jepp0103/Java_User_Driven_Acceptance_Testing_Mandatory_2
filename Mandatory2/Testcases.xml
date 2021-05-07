@@ -1,6 +1,6 @@
 <?xml version = "1.0" ?>	
 	
-<!DOCTYPE testcases SYSTEM "ATDD.dtd">
+<!DOCTYPE testcases SYSTEM "TDTD.dtd">
 	<testcases>
 
 		<shipitem>

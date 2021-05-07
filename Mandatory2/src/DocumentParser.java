@@ -11,7 +11,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-public class Main {
+public class DocumentParser {
 	
 	public static void main (String args[]) throws SAXException, IOException, ParserConfigurationException
 	{
@@ -20,9 +20,7 @@ public class Main {
         
         System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
         
-        //seperates the cases based on their story.
-        NodeList cases[]= { doc.getElementsByTagName("shipitem"),doc.getElementsByTagName("ordermaterials"), doc.getElementsByTagName("queryitems")};
-      
+        NodeList cases[]= { doc.getElementsByTagName("shipitem"),doc.getElementsByTagName("ordermaterials"), doc.getElementsByTagName("queryitems")};     
         
         for (NodeList caseList : cases) { 
 	        for (int temp = 0; temp < caseList.getLength(); temp++) {
