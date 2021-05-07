@@ -21,7 +21,7 @@ import org.example.domainmodel.domainmodel.Item;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.example.domainmodel.domainmodel.impl.ItemImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.example.domainmodel.domainmodel.impl.ItemImpl#getItem <em>Item</em>}</li>
  * </ul>
  *
  * @generated
@@ -29,24 +29,24 @@ import org.example.domainmodel.domainmodel.Item;
 public class ItemImpl extends MinimalEObjectImpl.Container implements Item
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The default value of the '{@link #getItem() <em>Item</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getItem()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
+  protected static final String ITEM_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getItem() <em>Item</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getItem()
    * @generated
    * @ordered
    */
-  protected String name = NAME_EDEFAULT;
+  protected String item = ITEM_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -75,9 +75,9 @@ public class ItemImpl extends MinimalEObjectImpl.Container implements Item
    * @generated
    */
   @Override
-  public String getName()
+  public String getItem()
   {
-    return name;
+    return item;
   }
 
   /**
@@ -86,12 +86,12 @@ public class ItemImpl extends MinimalEObjectImpl.Container implements Item
    * @generated
    */
   @Override
-  public void setName(String newName)
+  public void setItem(String newItem)
   {
-    String oldName = name;
-    name = newName;
+    String oldItem = item;
+    item = newItem;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DomainmodelPackage.ITEM__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, DomainmodelPackage.ITEM__ITEM, oldItem, item));
   }
 
   /**
@@ -104,8 +104,8 @@ public class ItemImpl extends MinimalEObjectImpl.Container implements Item
   {
     switch (featureID)
     {
-      case DomainmodelPackage.ITEM__NAME:
-        return getName();
+      case DomainmodelPackage.ITEM__ITEM:
+        return getItem();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -120,8 +120,8 @@ public class ItemImpl extends MinimalEObjectImpl.Container implements Item
   {
     switch (featureID)
     {
-      case DomainmodelPackage.ITEM__NAME:
-        setName((String)newValue);
+      case DomainmodelPackage.ITEM__ITEM:
+        setItem((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -137,8 +137,8 @@ public class ItemImpl extends MinimalEObjectImpl.Container implements Item
   {
     switch (featureID)
     {
-      case DomainmodelPackage.ITEM__NAME:
-        setName(NAME_EDEFAULT);
+      case DomainmodelPackage.ITEM__ITEM:
+        setItem(ITEM_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -154,8 +154,8 @@ public class ItemImpl extends MinimalEObjectImpl.Container implements Item
   {
     switch (featureID)
     {
-      case DomainmodelPackage.ITEM__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case DomainmodelPackage.ITEM__ITEM:
+        return ITEM_EDEFAULT == null ? item != null : !ITEM_EDEFAULT.equals(item);
     }
     return super.eIsSet(featureID);
   }
@@ -171,8 +171,8 @@ public class ItemImpl extends MinimalEObjectImpl.Container implements Item
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (name: ");
-    result.append(name);
+    result.append(" (item: ");
+    result.append(item);
     result.append(')');
     return result.toString();
   }

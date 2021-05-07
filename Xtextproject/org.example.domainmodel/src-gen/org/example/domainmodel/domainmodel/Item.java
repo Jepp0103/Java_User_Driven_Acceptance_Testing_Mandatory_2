@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.example.domainmodel.domainmodel.Item#getName <em>Name</em>}</li>
+ *   <li>{@link org.example.domainmodel.domainmodel.Item#getItem <em>Item</em>}</li>
  * </ul>
  *
  * @see org.example.domainmodel.domainmodel.DomainmodelPackage#getItem()
@@ -24,25 +24,25 @@ import org.eclipse.emf.ecore.EObject;
 public interface Item extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Item</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see org.example.domainmodel.domainmodel.DomainmodelPackage#getItem_Name()
+   * @return the value of the '<em>Item</em>' attribute.
+   * @see #setItem(String)
+   * @see org.example.domainmodel.domainmodel.DomainmodelPackage#getItem_Item()
    * @model
    * @generated
    */
-  String getName();
+  String getItem();
 
   /**
-   * Sets the value of the '{@link org.example.domainmodel.domainmodel.Item#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link org.example.domainmodel.domainmodel.Item#getItem <em>Item</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
+   * @param value the new value of the '<em>Item</em>' attribute.
+   * @see #getItem()
    * @generated
    */
-  void setName(String value);
+  void setItem(String value);
 
 } // Item

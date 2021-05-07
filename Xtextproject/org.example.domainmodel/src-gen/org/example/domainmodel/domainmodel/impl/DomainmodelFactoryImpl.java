@@ -67,11 +67,16 @@ public class DomainmodelFactoryImpl extends EFactoryImpl implements DomainmodelF
     {
       case DomainmodelPackage.MODEL: return createModel();
       case DomainmodelPackage.DECLARATION: return createDeclaration();
+      case DomainmodelPackage.CONDITIONAND_ACTION: return createConditionandAction();
+      case DomainmodelPackage.STORY: return createStory();
       case DomainmodelPackage.SHIP: return createShip();
+      case DomainmodelPackage.ORDERMATERIALS: return createOrdermaterials();
+      case DomainmodelPackage.QUERYITEMS: return createQueryitems();
       case DomainmodelPackage.ITEM: return createItem();
       case DomainmodelPackage.ADDRESS: return createAddress();
+      case DomainmodelPackage.MATERIAL: return createMaterial();
       case DomainmodelPackage.CONDITION: return createCondition();
-      case DomainmodelPackage.ACTION: return createAction();
+      case DomainmodelPackage.REACTION: return createReaction();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -107,10 +112,58 @@ public class DomainmodelFactoryImpl extends EFactoryImpl implements DomainmodelF
    * @generated
    */
   @Override
+  public ConditionandAction createConditionandAction()
+  {
+    ConditionandActionImpl conditionandAction = new ConditionandActionImpl();
+    return conditionandAction;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Story createStory()
+  {
+    StoryImpl story = new StoryImpl();
+    return story;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Ship createShip()
   {
     ShipImpl ship = new ShipImpl();
     return ship;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Ordermaterials createOrdermaterials()
+  {
+    OrdermaterialsImpl ordermaterials = new OrdermaterialsImpl();
+    return ordermaterials;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Queryitems createQueryitems()
+  {
+    QueryitemsImpl queryitems = new QueryitemsImpl();
+    return queryitems;
   }
 
   /**
@@ -143,6 +196,18 @@ public class DomainmodelFactoryImpl extends EFactoryImpl implements DomainmodelF
    * @generated
    */
   @Override
+  public Material createMaterial()
+  {
+    MaterialImpl material = new MaterialImpl();
+    return material;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Condition createCondition()
   {
     ConditionImpl condition = new ConditionImpl();
@@ -155,10 +220,10 @@ public class DomainmodelFactoryImpl extends EFactoryImpl implements DomainmodelF
    * @generated
    */
   @Override
-  public Action createAction()
+  public Reaction createReaction()
   {
-    ActionImpl action = new ActionImpl();
-    return action;
+    ReactionImpl reaction = new ReactionImpl();
+    return reaction;
   }
 
   /**

@@ -10,15 +10,20 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
-import org.example.domainmodel.domainmodel.Action;
 import org.example.domainmodel.domainmodel.Address;
 import org.example.domainmodel.domainmodel.Condition;
+import org.example.domainmodel.domainmodel.ConditionandAction;
 import org.example.domainmodel.domainmodel.Declaration;
 import org.example.domainmodel.domainmodel.DomainmodelFactory;
 import org.example.domainmodel.domainmodel.DomainmodelPackage;
 import org.example.domainmodel.domainmodel.Item;
+import org.example.domainmodel.domainmodel.Material;
 import org.example.domainmodel.domainmodel.Model;
+import org.example.domainmodel.domainmodel.Ordermaterials;
+import org.example.domainmodel.domainmodel.Queryitems;
+import org.example.domainmodel.domainmodel.Reaction;
 import org.example.domainmodel.domainmodel.Ship;
+import org.example.domainmodel.domainmodel.Story;
 
 /**
  * <!-- begin-user-doc -->
@@ -47,7 +52,35 @@ public class DomainmodelPackageImpl extends EPackageImpl implements DomainmodelP
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass conditionandActionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass storyEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass shipEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass ordermaterialsEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass queryitemsEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -68,6 +101,13 @@ public class DomainmodelPackageImpl extends EPackageImpl implements DomainmodelP
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass materialEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass conditionEClass = null;
 
   /**
@@ -75,7 +115,7 @@ public class DomainmodelPackageImpl extends EPackageImpl implements DomainmodelP
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass actionEClass = null;
+  private EClass reactionEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -179,6 +219,72 @@ public class DomainmodelPackageImpl extends EPackageImpl implements DomainmodelP
    * @generated
    */
   @Override
+  public EReference getDeclaration_Conditionandaction()
+  {
+    return (EReference)declarationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getDeclaration_Story()
+  {
+    return (EReference)declarationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getConditionandAction()
+  {
+    return conditionandActionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getConditionandAction_Conditions()
+  {
+    return (EReference)conditionandActionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getStory()
+  {
+    return storyEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getStory_Reaction()
+  {
+    return (EReference)storyEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getShip()
   {
     return shipEClass;
@@ -190,7 +296,7 @@ public class DomainmodelPackageImpl extends EPackageImpl implements DomainmodelP
    * @generated
    */
   @Override
-  public EReference getShip_Conditions()
+  public EReference getShip_Item()
   {
     return (EReference)shipEClass.getEStructuralFeatures().get(0);
   }
@@ -201,7 +307,7 @@ public class DomainmodelPackageImpl extends EPackageImpl implements DomainmodelP
    * @generated
    */
   @Override
-  public EReference getShip_Action()
+  public EReference getShip_Address()
   {
     return (EReference)shipEClass.getEStructuralFeatures().get(1);
   }
@@ -212,9 +318,42 @@ public class DomainmodelPackageImpl extends EPackageImpl implements DomainmodelP
    * @generated
    */
   @Override
-  public EReference getShip_Address()
+  public EClass getOrdermaterials()
   {
-    return (EReference)shipEClass.getEStructuralFeatures().get(2);
+    return ordermaterialsEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getOrdermaterials_Material()
+  {
+    return (EReference)ordermaterialsEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getQueryitems()
+  {
+    return queryitemsEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getQueryitems_Item()
+  {
+    return (EReference)queryitemsEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -234,7 +373,7 @@ public class DomainmodelPackageImpl extends EPackageImpl implements DomainmodelP
    * @generated
    */
   @Override
-  public EAttribute getItem_Name()
+  public EAttribute getItem_Item()
   {
     return (EAttribute)itemEClass.getEStructuralFeatures().get(0);
   }
@@ -256,9 +395,31 @@ public class DomainmodelPackageImpl extends EPackageImpl implements DomainmodelP
    * @generated
    */
   @Override
-  public EAttribute getAddress_Name()
+  public EAttribute getAddress_Address()
   {
     return (EAttribute)addressEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getMaterial()
+  {
+    return materialEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getMaterial_Material()
+  {
+    return (EAttribute)materialEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -278,7 +439,7 @@ public class DomainmodelPackageImpl extends EPackageImpl implements DomainmodelP
    * @generated
    */
   @Override
-  public EAttribute getCondition_Name()
+  public EAttribute getCondition_Condition()
   {
     return (EAttribute)conditionEClass.getEStructuralFeatures().get(0);
   }
@@ -289,9 +450,9 @@ public class DomainmodelPackageImpl extends EPackageImpl implements DomainmodelP
    * @generated
    */
   @Override
-  public EClass getAction()
+  public EClass getReaction()
   {
-    return actionEClass;
+    return reactionEClass;
   }
 
   /**
@@ -300,9 +461,9 @@ public class DomainmodelPackageImpl extends EPackageImpl implements DomainmodelP
    * @generated
    */
   @Override
-  public EAttribute getAction_Name()
+  public EAttribute getReaction_Reaction()
   {
-    return (EAttribute)actionEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)reactionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -340,23 +501,39 @@ public class DomainmodelPackageImpl extends EPackageImpl implements DomainmodelP
     createEReference(modelEClass, MODEL__DECLARATIONS);
 
     declarationEClass = createEClass(DECLARATION);
+    createEReference(declarationEClass, DECLARATION__CONDITIONANDACTION);
+    createEReference(declarationEClass, DECLARATION__STORY);
+
+    conditionandActionEClass = createEClass(CONDITIONAND_ACTION);
+    createEReference(conditionandActionEClass, CONDITIONAND_ACTION__CONDITIONS);
+
+    storyEClass = createEClass(STORY);
+    createEReference(storyEClass, STORY__REACTION);
 
     shipEClass = createEClass(SHIP);
-    createEReference(shipEClass, SHIP__CONDITIONS);
-    createEReference(shipEClass, SHIP__ACTION);
+    createEReference(shipEClass, SHIP__ITEM);
     createEReference(shipEClass, SHIP__ADDRESS);
 
+    ordermaterialsEClass = createEClass(ORDERMATERIALS);
+    createEReference(ordermaterialsEClass, ORDERMATERIALS__MATERIAL);
+
+    queryitemsEClass = createEClass(QUERYITEMS);
+    createEReference(queryitemsEClass, QUERYITEMS__ITEM);
+
     itemEClass = createEClass(ITEM);
-    createEAttribute(itemEClass, ITEM__NAME);
+    createEAttribute(itemEClass, ITEM__ITEM);
 
     addressEClass = createEClass(ADDRESS);
-    createEAttribute(addressEClass, ADDRESS__NAME);
+    createEAttribute(addressEClass, ADDRESS__ADDRESS);
+
+    materialEClass = createEClass(MATERIAL);
+    createEAttribute(materialEClass, MATERIAL__MATERIAL);
 
     conditionEClass = createEClass(CONDITION);
-    createEAttribute(conditionEClass, CONDITION__NAME);
+    createEAttribute(conditionEClass, CONDITION__CONDITION);
 
-    actionEClass = createEClass(ACTION);
-    createEAttribute(actionEClass, ACTION__NAME);
+    reactionEClass = createEClass(REACTION);
+    createEAttribute(reactionEClass, REACTION__REACTION);
   }
 
   /**
@@ -388,30 +565,48 @@ public class DomainmodelPackageImpl extends EPackageImpl implements DomainmodelP
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    shipEClass.getESuperTypes().add(this.getDeclaration());
+    shipEClass.getESuperTypes().add(this.getStory());
+    ordermaterialsEClass.getESuperTypes().add(this.getStory());
+    queryitemsEClass.getESuperTypes().add(this.getStory());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getModel_Declarations(), this.getDeclaration(), null, "declarations", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(declarationEClass, Declaration.class, "Declaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDeclaration_Conditionandaction(), this.getConditionandAction(), null, "conditionandaction", null, 0, 1, Declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDeclaration_Story(), this.getStory(), null, "story", null, 0, 1, Declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(conditionandActionEClass, ConditionandAction.class, "ConditionandAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getConditionandAction_Conditions(), this.getCondition(), null, "conditions", null, 0, -1, ConditionandAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(storyEClass, Story.class, "Story", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getStory_Reaction(), this.getReaction(), null, "reaction", null, 0, -1, Story.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(shipEClass, Ship.class, "Ship", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getShip_Conditions(), this.getCondition(), null, "conditions", null, 0, -1, Ship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getShip_Action(), ecorePackage.getEObject(), null, "action", null, 0, -1, Ship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getShip_Item(), this.getItem(), null, "item", null, 0, -1, Ship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getShip_Address(), this.getAddress(), null, "address", null, 0, -1, Ship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(ordermaterialsEClass, Ordermaterials.class, "Ordermaterials", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getOrdermaterials_Material(), this.getMaterial(), null, "material", null, 0, -1, Ordermaterials.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(queryitemsEClass, Queryitems.class, "Queryitems", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getQueryitems_Item(), this.getItem(), null, "item", null, 0, -1, Queryitems.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(itemEClass, Item.class, "Item", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getItem_Name(), ecorePackage.getEString(), "name", null, 0, 1, Item.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getItem_Item(), ecorePackage.getEString(), "item", null, 0, 1, Item.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(addressEClass, Address.class, "Address", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAddress_Name(), ecorePackage.getEString(), "name", null, 0, 1, Address.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAddress_Address(), ecorePackage.getEString(), "address", null, 0, 1, Address.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(materialEClass, Material.class, "Material", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getMaterial_Material(), ecorePackage.getEString(), "material", null, 0, 1, Material.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(conditionEClass, Condition.class, "Condition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getCondition_Name(), ecorePackage.getEString(), "name", null, 0, 1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCondition_Condition(), ecorePackage.getEString(), "condition", null, 0, 1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAction_Name(), ecorePackage.getEString(), "name", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(reactionEClass, Reaction.class, "Reaction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getReaction_Reaction(), ecorePackage.getEString(), "reaction", null, 0, 1, Reaction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

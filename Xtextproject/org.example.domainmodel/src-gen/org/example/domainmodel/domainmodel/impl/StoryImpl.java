@@ -3,57 +3,55 @@
  */
 package org.example.domainmodel.domainmodel.impl;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.example.domainmodel.domainmodel.Action;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
 import org.example.domainmodel.domainmodel.DomainmodelPackage;
+import org.example.domainmodel.domainmodel.Reaction;
+import org.example.domainmodel.domainmodel.Story;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Action</b></em>'.
+ * An implementation of the model object '<em><b>Story</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.example.domainmodel.domainmodel.impl.ActionImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.example.domainmodel.domainmodel.impl.StoryImpl#getReaction <em>Reaction</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ActionImpl extends MinimalEObjectImpl.Container implements Action
+public class StoryImpl extends MinimalEObjectImpl.Container implements Story
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getReaction() <em>Reaction</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getReaction()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
+  protected EList<Reaction> reaction;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ActionImpl()
+  protected StoryImpl()
   {
     super();
   }
@@ -66,7 +64,7 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
   @Override
   protected EClass eStaticClass()
   {
-    return DomainmodelPackage.Literals.ACTION;
+    return DomainmodelPackage.Literals.STORY;
   }
 
   /**
@@ -75,9 +73,13 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
    * @generated
    */
   @Override
-  public String getName()
+  public EList<Reaction> getReaction()
   {
-    return name;
+    if (reaction == null)
+    {
+      reaction = new EObjectContainmentEList<Reaction>(Reaction.class, this, DomainmodelPackage.STORY__REACTION);
+    }
+    return reaction;
   }
 
   /**
@@ -86,12 +88,14 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
    * @generated
    */
   @Override
-  public void setName(String newName)
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DomainmodelPackage.ACTION__NAME, oldName, name));
+    switch (featureID)
+    {
+      case DomainmodelPackage.STORY__REACTION:
+        return ((InternalEList<?>)getReaction()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -104,8 +108,8 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
   {
     switch (featureID)
     {
-      case DomainmodelPackage.ACTION__NAME:
-        return getName();
+      case DomainmodelPackage.STORY__REACTION:
+        return getReaction();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -115,13 +119,15 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case DomainmodelPackage.ACTION__NAME:
-        setName((String)newValue);
+      case DomainmodelPackage.STORY__REACTION:
+        getReaction().clear();
+        getReaction().addAll((Collection<? extends Reaction>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -137,8 +143,8 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
   {
     switch (featureID)
     {
-      case DomainmodelPackage.ACTION__NAME:
-        setName(NAME_EDEFAULT);
+      case DomainmodelPackage.STORY__REACTION:
+        getReaction().clear();
         return;
     }
     super.eUnset(featureID);
@@ -154,27 +160,10 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
   {
     switch (featureID)
     {
-      case DomainmodelPackage.ACTION__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case DomainmodelPackage.STORY__REACTION:
+        return reaction != null && !reaction.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(')');
-    return result.toString();
-  }
-
-} //ActionImpl
+} //StoryImpl

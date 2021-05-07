@@ -45,7 +45,7 @@
 		</queryitems>
 		
 		<queryitems>
-			<given>10 of was item is in depot</given>
+			<given>10 of was item was in depot</given>
 			<given>1 of said item is shipped</given>
 			<when>actor queries item of type:</when>
 			<item>Iphone</item>

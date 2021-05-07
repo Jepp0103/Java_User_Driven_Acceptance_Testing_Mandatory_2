@@ -5,8 +5,6 @@ package org.example.domainmodel.domainmodel;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Ship</b></em>'.
@@ -16,8 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.example.domainmodel.domainmodel.Ship#getConditions <em>Conditions</em>}</li>
- *   <li>{@link org.example.domainmodel.domainmodel.Ship#getAction <em>Action</em>}</li>
+ *   <li>{@link org.example.domainmodel.domainmodel.Ship#getItem <em>Item</em>}</li>
  *   <li>{@link org.example.domainmodel.domainmodel.Ship#getAddress <em>Address</em>}</li>
  * </ul>
  *
@@ -25,31 +22,19 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Ship extends Declaration
+public interface Ship extends Story
 {
   /**
-   * Returns the value of the '<em><b>Conditions</b></em>' containment reference list.
-   * The list contents are of type {@link org.example.domainmodel.domainmodel.Condition}.
+   * Returns the value of the '<em><b>Item</b></em>' containment reference list.
+   * The list contents are of type {@link org.example.domainmodel.domainmodel.Item}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Conditions</em>' containment reference list.
-   * @see org.example.domainmodel.domainmodel.DomainmodelPackage#getShip_Conditions()
+   * @return the value of the '<em>Item</em>' containment reference list.
+   * @see org.example.domainmodel.domainmodel.DomainmodelPackage#getShip_Item()
    * @model containment="true"
    * @generated
    */
-  EList<Condition> getConditions();
-
-  /**
-   * Returns the value of the '<em><b>Action</b></em>' containment reference list.
-   * The list contents are of type {@link org.eclipse.emf.ecore.EObject}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Action</em>' containment reference list.
-   * @see org.example.domainmodel.domainmodel.DomainmodelPackage#getShip_Action()
-   * @model containment="true"
-   * @generated
-   */
-  EList<EObject> getAction();
+  EList<Item> getItem();
 
   /**
    * Returns the value of the '<em><b>Address</b></em>' containment reference list.

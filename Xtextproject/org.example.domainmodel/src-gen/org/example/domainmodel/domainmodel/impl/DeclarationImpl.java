@@ -3,22 +3,56 @@
  */
 package org.example.domainmodel.domainmodel.impl;
 
-import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.example.domainmodel.domainmodel.ConditionandAction;
 import org.example.domainmodel.domainmodel.Declaration;
 import org.example.domainmodel.domainmodel.DomainmodelPackage;
+import org.example.domainmodel.domainmodel.Story;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Declaration</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link org.example.domainmodel.domainmodel.impl.DeclarationImpl#getConditionandaction <em>Conditionandaction</em>}</li>
+ *   <li>{@link org.example.domainmodel.domainmodel.impl.DeclarationImpl#getStory <em>Story</em>}</li>
+ * </ul>
  *
  * @generated
  */
 public class DeclarationImpl extends MinimalEObjectImpl.Container implements Declaration
 {
+  /**
+   * The cached value of the '{@link #getConditionandaction() <em>Conditionandaction</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getConditionandaction()
+   * @generated
+   * @ordered
+   */
+  protected ConditionandAction conditionandaction;
+
+  /**
+   * The cached value of the '{@link #getStory() <em>Story</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getStory()
+   * @generated
+   * @ordered
+   */
+  protected Story story;
+
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -38,6 +72,200 @@ public class DeclarationImpl extends MinimalEObjectImpl.Container implements Dec
   protected EClass eStaticClass()
   {
     return DomainmodelPackage.Literals.DECLARATION;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ConditionandAction getConditionandaction()
+  {
+    return conditionandaction;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetConditionandaction(ConditionandAction newConditionandaction, NotificationChain msgs)
+  {
+    ConditionandAction oldConditionandaction = conditionandaction;
+    conditionandaction = newConditionandaction;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DomainmodelPackage.DECLARATION__CONDITIONANDACTION, oldConditionandaction, newConditionandaction);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setConditionandaction(ConditionandAction newConditionandaction)
+  {
+    if (newConditionandaction != conditionandaction)
+    {
+      NotificationChain msgs = null;
+      if (conditionandaction != null)
+        msgs = ((InternalEObject)conditionandaction).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DomainmodelPackage.DECLARATION__CONDITIONANDACTION, null, msgs);
+      if (newConditionandaction != null)
+        msgs = ((InternalEObject)newConditionandaction).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DomainmodelPackage.DECLARATION__CONDITIONANDACTION, null, msgs);
+      msgs = basicSetConditionandaction(newConditionandaction, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DomainmodelPackage.DECLARATION__CONDITIONANDACTION, newConditionandaction, newConditionandaction));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Story getStory()
+  {
+    return story;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetStory(Story newStory, NotificationChain msgs)
+  {
+    Story oldStory = story;
+    story = newStory;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DomainmodelPackage.DECLARATION__STORY, oldStory, newStory);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setStory(Story newStory)
+  {
+    if (newStory != story)
+    {
+      NotificationChain msgs = null;
+      if (story != null)
+        msgs = ((InternalEObject)story).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DomainmodelPackage.DECLARATION__STORY, null, msgs);
+      if (newStory != null)
+        msgs = ((InternalEObject)newStory).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DomainmodelPackage.DECLARATION__STORY, null, msgs);
+      msgs = basicSetStory(newStory, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DomainmodelPackage.DECLARATION__STORY, newStory, newStory));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case DomainmodelPackage.DECLARATION__CONDITIONANDACTION:
+        return basicSetConditionandaction(null, msgs);
+      case DomainmodelPackage.DECLARATION__STORY:
+        return basicSetStory(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object eGet(int featureID, boolean resolve, boolean coreType)
+  {
+    switch (featureID)
+    {
+      case DomainmodelPackage.DECLARATION__CONDITIONANDACTION:
+        return getConditionandaction();
+      case DomainmodelPackage.DECLARATION__STORY:
+        return getStory();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eSet(int featureID, Object newValue)
+  {
+    switch (featureID)
+    {
+      case DomainmodelPackage.DECLARATION__CONDITIONANDACTION:
+        setConditionandaction((ConditionandAction)newValue);
+        return;
+      case DomainmodelPackage.DECLARATION__STORY:
+        setStory((Story)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eUnset(int featureID)
+  {
+    switch (featureID)
+    {
+      case DomainmodelPackage.DECLARATION__CONDITIONANDACTION:
+        setConditionandaction((ConditionandAction)null);
+        return;
+      case DomainmodelPackage.DECLARATION__STORY:
+        setStory((Story)null);
+        return;
+    }
+    super.eUnset(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean eIsSet(int featureID)
+  {
+    switch (featureID)
+    {
+      case DomainmodelPackage.DECLARATION__CONDITIONANDACTION:
+        return conditionandaction != null;
+      case DomainmodelPackage.DECLARATION__STORY:
+        return story != null;
+    }
+    return super.eIsSet(featureID);
   }
 
 } //DeclarationImpl

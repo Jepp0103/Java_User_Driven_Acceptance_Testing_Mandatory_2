@@ -86,9 +86,29 @@ public class DomainmodelAdapterFactory extends AdapterFactoryImpl
         return createDeclarationAdapter();
       }
       @Override
+      public Adapter caseConditionandAction(ConditionandAction object)
+      {
+        return createConditionandActionAdapter();
+      }
+      @Override
+      public Adapter caseStory(Story object)
+      {
+        return createStoryAdapter();
+      }
+      @Override
       public Adapter caseShip(Ship object)
       {
         return createShipAdapter();
+      }
+      @Override
+      public Adapter caseOrdermaterials(Ordermaterials object)
+      {
+        return createOrdermaterialsAdapter();
+      }
+      @Override
+      public Adapter caseQueryitems(Queryitems object)
+      {
+        return createQueryitemsAdapter();
       }
       @Override
       public Adapter caseItem(Item object)
@@ -101,14 +121,19 @@ public class DomainmodelAdapterFactory extends AdapterFactoryImpl
         return createAddressAdapter();
       }
       @Override
+      public Adapter caseMaterial(Material object)
+      {
+        return createMaterialAdapter();
+      }
+      @Override
       public Adapter caseCondition(Condition object)
       {
         return createConditionAdapter();
       }
       @Override
-      public Adapter caseAction(Action object)
+      public Adapter caseReaction(Reaction object)
       {
-        return createActionAdapter();
+        return createReactionAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -163,6 +188,36 @@ public class DomainmodelAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.example.domainmodel.domainmodel.ConditionandAction <em>Conditionand Action</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.example.domainmodel.domainmodel.ConditionandAction
+   * @generated
+   */
+  public Adapter createConditionandActionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.example.domainmodel.domainmodel.Story <em>Story</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.example.domainmodel.domainmodel.Story
+   * @generated
+   */
+  public Adapter createStoryAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.example.domainmodel.domainmodel.Ship <em>Ship</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -173,6 +228,36 @@ public class DomainmodelAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createShipAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.example.domainmodel.domainmodel.Ordermaterials <em>Ordermaterials</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.example.domainmodel.domainmodel.Ordermaterials
+   * @generated
+   */
+  public Adapter createOrdermaterialsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.example.domainmodel.domainmodel.Queryitems <em>Queryitems</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.example.domainmodel.domainmodel.Queryitems
+   * @generated
+   */
+  public Adapter createQueryitemsAdapter()
   {
     return null;
   }
@@ -208,6 +293,21 @@ public class DomainmodelAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.example.domainmodel.domainmodel.Material <em>Material</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.example.domainmodel.domainmodel.Material
+   * @generated
+   */
+  public Adapter createMaterialAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.example.domainmodel.domainmodel.Condition <em>Condition</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -223,16 +323,16 @@ public class DomainmodelAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.example.domainmodel.domainmodel.Action <em>Action</em>}'.
+   * Creates a new adapter for an object of class '{@link org.example.domainmodel.domainmodel.Reaction <em>Reaction</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.example.domainmodel.domainmodel.Action
+   * @see org.example.domainmodel.domainmodel.Reaction
    * @generated
    */
-  public Adapter createActionAdapter()
+  public Adapter createReactionAdapter()
   {
     return null;
   }

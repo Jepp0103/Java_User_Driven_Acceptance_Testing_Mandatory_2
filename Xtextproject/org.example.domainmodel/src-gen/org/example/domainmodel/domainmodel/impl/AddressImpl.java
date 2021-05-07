@@ -21,7 +21,7 @@ import org.example.domainmodel.domainmodel.DomainmodelPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.example.domainmodel.domainmodel.impl.AddressImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.example.domainmodel.domainmodel.impl.AddressImpl#getAddress <em>Address</em>}</li>
  * </ul>
  *
  * @generated
@@ -29,24 +29,24 @@ import org.example.domainmodel.domainmodel.DomainmodelPackage;
 public class AddressImpl extends MinimalEObjectImpl.Container implements Address
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The default value of the '{@link #getAddress() <em>Address</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getAddress()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
+  protected static final String ADDRESS_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getAddress() <em>Address</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getAddress()
    * @generated
    * @ordered
    */
-  protected String name = NAME_EDEFAULT;
+  protected String address = ADDRESS_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -75,9 +75,9 @@ public class AddressImpl extends MinimalEObjectImpl.Container implements Address
    * @generated
    */
   @Override
-  public String getName()
+  public String getAddress()
   {
-    return name;
+    return address;
   }
 
   /**
@@ -86,12 +86,12 @@ public class AddressImpl extends MinimalEObjectImpl.Container implements Address
    * @generated
    */
   @Override
-  public void setName(String newName)
+  public void setAddress(String newAddress)
   {
-    String oldName = name;
-    name = newName;
+    String oldAddress = address;
+    address = newAddress;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DomainmodelPackage.ADDRESS__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, DomainmodelPackage.ADDRESS__ADDRESS, oldAddress, address));
   }
 
   /**
@@ -104,8 +104,8 @@ public class AddressImpl extends MinimalEObjectImpl.Container implements Address
   {
     switch (featureID)
     {
-      case DomainmodelPackage.ADDRESS__NAME:
-        return getName();
+      case DomainmodelPackage.ADDRESS__ADDRESS:
+        return getAddress();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -120,8 +120,8 @@ public class AddressImpl extends MinimalEObjectImpl.Container implements Address
   {
     switch (featureID)
     {
-      case DomainmodelPackage.ADDRESS__NAME:
-        setName((String)newValue);
+      case DomainmodelPackage.ADDRESS__ADDRESS:
+        setAddress((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -137,8 +137,8 @@ public class AddressImpl extends MinimalEObjectImpl.Container implements Address
   {
     switch (featureID)
     {
-      case DomainmodelPackage.ADDRESS__NAME:
-        setName(NAME_EDEFAULT);
+      case DomainmodelPackage.ADDRESS__ADDRESS:
+        setAddress(ADDRESS_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -154,8 +154,8 @@ public class AddressImpl extends MinimalEObjectImpl.Container implements Address
   {
     switch (featureID)
     {
-      case DomainmodelPackage.ADDRESS__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case DomainmodelPackage.ADDRESS__ADDRESS:
+        return ADDRESS_EDEFAULT == null ? address != null : !ADDRESS_EDEFAULT.equals(address);
     }
     return super.eIsSet(featureID);
   }
@@ -171,8 +171,8 @@ public class AddressImpl extends MinimalEObjectImpl.Container implements Address
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (name: ");
-    result.append(name);
+    result.append(" (address: ");
+    result.append(address);
     result.append(')');
     return result.toString();
   }

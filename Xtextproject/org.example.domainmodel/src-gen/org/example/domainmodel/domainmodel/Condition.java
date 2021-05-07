@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.example.domainmodel.domainmodel.Condition#getName <em>Name</em>}</li>
+ *   <li>{@link org.example.domainmodel.domainmodel.Condition#getCondition <em>Condition</em>}</li>
  * </ul>
  *
  * @see org.example.domainmodel.domainmodel.DomainmodelPackage#getCondition()
@@ -24,25 +24,25 @@ import org.eclipse.emf.ecore.EObject;
 public interface Condition extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Condition</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see org.example.domainmodel.domainmodel.DomainmodelPackage#getCondition_Name()
+   * @return the value of the '<em>Condition</em>' attribute.
+   * @see #setCondition(String)
+   * @see org.example.domainmodel.domainmodel.DomainmodelPackage#getCondition_Condition()
    * @model
    * @generated
    */
-  String getName();
+  String getCondition();
 
   /**
-   * Sets the value of the '{@link org.example.domainmodel.domainmodel.Condition#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link org.example.domainmodel.domainmodel.Condition#getCondition <em>Condition</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
+   * @param value the new value of the '<em>Condition</em>' attribute.
+   * @see #getCondition()
    * @generated
    */
-  void setName(String value);
+  void setCondition(String value);
 
 } // Condition

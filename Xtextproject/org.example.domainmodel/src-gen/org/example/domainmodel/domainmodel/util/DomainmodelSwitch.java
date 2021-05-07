@@ -87,11 +87,41 @@ public class DomainmodelSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case DomainmodelPackage.CONDITIONAND_ACTION:
+      {
+        ConditionandAction conditionandAction = (ConditionandAction)theEObject;
+        T result = caseConditionandAction(conditionandAction);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DomainmodelPackage.STORY:
+      {
+        Story story = (Story)theEObject;
+        T result = caseStory(story);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case DomainmodelPackage.SHIP:
       {
         Ship ship = (Ship)theEObject;
         T result = caseShip(ship);
-        if (result == null) result = caseDeclaration(ship);
+        if (result == null) result = caseStory(ship);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DomainmodelPackage.ORDERMATERIALS:
+      {
+        Ordermaterials ordermaterials = (Ordermaterials)theEObject;
+        T result = caseOrdermaterials(ordermaterials);
+        if (result == null) result = caseStory(ordermaterials);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DomainmodelPackage.QUERYITEMS:
+      {
+        Queryitems queryitems = (Queryitems)theEObject;
+        T result = caseQueryitems(queryitems);
+        if (result == null) result = caseStory(queryitems);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -109,6 +139,13 @@ public class DomainmodelSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case DomainmodelPackage.MATERIAL:
+      {
+        Material material = (Material)theEObject;
+        T result = caseMaterial(material);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case DomainmodelPackage.CONDITION:
       {
         Condition condition = (Condition)theEObject;
@@ -116,10 +153,10 @@ public class DomainmodelSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DomainmodelPackage.ACTION:
+      case DomainmodelPackage.REACTION:
       {
-        Action action = (Action)theEObject;
-        T result = caseAction(action);
+        Reaction reaction = (Reaction)theEObject;
+        T result = caseReaction(reaction);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -160,6 +197,38 @@ public class DomainmodelSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Conditionand Action</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Conditionand Action</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseConditionandAction(ConditionandAction object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Story</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Story</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStory(Story object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Ship</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -171,6 +240,38 @@ public class DomainmodelSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseShip(Ship object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Ordermaterials</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Ordermaterials</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseOrdermaterials(Ordermaterials object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Queryitems</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Queryitems</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseQueryitems(Queryitems object)
   {
     return null;
   }
@@ -208,6 +309,22 @@ public class DomainmodelSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Material</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Material</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMaterial(Material object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Condition</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -224,17 +341,17 @@ public class DomainmodelSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Action</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Reaction</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Action</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Reaction</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseAction(Action object)
+  public T caseReaction(Reaction object)
   {
     return null;
   }

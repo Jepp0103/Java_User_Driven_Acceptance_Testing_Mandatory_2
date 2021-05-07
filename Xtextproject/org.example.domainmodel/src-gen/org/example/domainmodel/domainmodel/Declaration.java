@@ -10,6 +10,13 @@ import org.eclipse.emf.ecore.EObject;
  * A representation of the model object '<em><b>Declaration</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link org.example.domainmodel.domainmodel.Declaration#getConditionandaction <em>Conditionandaction</em>}</li>
+ *   <li>{@link org.example.domainmodel.domainmodel.Declaration#getStory <em>Story</em>}</li>
+ * </ul>
  *
  * @see org.example.domainmodel.domainmodel.DomainmodelPackage#getDeclaration()
  * @model
@@ -17,4 +24,48 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Declaration extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Conditionandaction</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Conditionandaction</em>' containment reference.
+   * @see #setConditionandaction(ConditionandAction)
+   * @see org.example.domainmodel.domainmodel.DomainmodelPackage#getDeclaration_Conditionandaction()
+   * @model containment="true"
+   * @generated
+   */
+  ConditionandAction getConditionandaction();
+
+  /**
+   * Sets the value of the '{@link org.example.domainmodel.domainmodel.Declaration#getConditionandaction <em>Conditionandaction</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Conditionandaction</em>' containment reference.
+   * @see #getConditionandaction()
+   * @generated
+   */
+  void setConditionandaction(ConditionandAction value);
+
+  /**
+   * Returns the value of the '<em><b>Story</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Story</em>' containment reference.
+   * @see #setStory(Story)
+   * @see org.example.domainmodel.domainmodel.DomainmodelPackage#getDeclaration_Story()
+   * @model containment="true"
+   * @generated
+   */
+  Story getStory();
+
+  /**
+   * Sets the value of the '{@link org.example.domainmodel.domainmodel.Declaration#getStory <em>Story</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Story</em>' containment reference.
+   * @see #getStory()
+   * @generated
+   */
+  void setStory(Story value);
+
 } // Declaration

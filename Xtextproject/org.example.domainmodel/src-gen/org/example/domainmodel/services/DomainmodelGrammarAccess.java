@@ -6,6 +6,7 @@ package org.example.domainmodel.services;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import java.util.List;
+import org.eclipse.xtext.Alternatives;
 import org.eclipse.xtext.Assignment;
 import org.eclipse.xtext.Grammar;
 import org.eclipse.xtext.GrammarUtil;
@@ -38,17 +39,34 @@ public class DomainmodelGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	public class DeclarationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.example.domainmodel.Domainmodel.Declaration");
-		private final RuleCall cShipParserRuleCall = (RuleCall)rule.eContents().get(1);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cConditionandactionAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cConditionandactionConditionandActionParserRuleCall_0_0 = (RuleCall)cConditionandactionAssignment_0.eContents().get(0);
+		private final Assignment cStoryAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cStoryStoryParserRuleCall_1_0 = (RuleCall)cStoryAssignment_1.eContents().get(0);
 		
 		//Declaration:
-		//       Ship;
+		//    conditionandaction=ConditionandAction story=Story
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Ship
-		public RuleCall getShipParserRuleCall() { return cShipParserRuleCall; }
+		//conditionandaction=ConditionandAction story=Story
+		public Group getGroup() { return cGroup; }
+		
+		//conditionandaction=ConditionandAction
+		public Assignment getConditionandactionAssignment_0() { return cConditionandactionAssignment_0; }
+		
+		//ConditionandAction
+		public RuleCall getConditionandactionConditionandActionParserRuleCall_0_0() { return cConditionandactionConditionandActionParserRuleCall_0_0; }
+		
+		//story=Story
+		public Assignment getStoryAssignment_1() { return cStoryAssignment_1; }
+		
+		//Story
+		public RuleCall getStoryStoryParserRuleCall_1_0() { return cStoryStoryParserRuleCall_1_0; }
 	}
-	public class ShipElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.example.domainmodel.Domainmodel.Ship");
+	public class ConditionandActionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.example.domainmodel.Domainmodel.ConditionandAction");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cGivenKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cConditionsAssignment_1 = (Assignment)cGroup.eContents().get(1);
@@ -58,20 +76,13 @@ public class DomainmodelGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final Assignment cConditionsAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
 		private final RuleCall cConditionsConditionParserRuleCall_2_1_0 = (RuleCall)cConditionsAssignment_2_1.eContents().get(0);
 		private final Keyword cWhenKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cActionAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cActionActionParserRuleCall_4_0 = (RuleCall)cActionAssignment_4.eContents().get(0);
-		private final Assignment cActionAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cActionItemParserRuleCall_5_0 = (RuleCall)cActionAssignment_5.eContents().get(0);
-		private final Keyword cToKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Assignment cAddressAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cAddressAddressParserRuleCall_7_0 = (RuleCall)cAddressAssignment_7.eContents().get(0);
 		
-		//Ship :
-		//    'Given' conditions+=Condition (" and " conditions+=Condition)* ' when ' action+=Action action+=Item ' to ' address+=Address
+		//ConditionandAction:
+		//    'Given' conditions+=Condition ('and' conditions+=Condition)* 'when'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Given' conditions+=Condition (" and " conditions+=Condition)* ' when ' action+=Action action+=Item ' to ' address+=Address
+		//'Given' conditions+=Condition ('and' conditions+=Condition)* 'when'
 		public Group getGroup() { return cGroup; }
 		
 		//'Given'
@@ -83,10 +94,10 @@ public class DomainmodelGrammarAccess extends AbstractElementFinder.AbstractGram
 		//Condition
 		public RuleCall getConditionsConditionParserRuleCall_1_0() { return cConditionsConditionParserRuleCall_1_0; }
 		
-		//(" and " conditions+=Condition)*
+		//('and' conditions+=Condition)*
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//" and "
+		//'and'
 		public Keyword getAndKeyword_2_0() { return cAndKeyword_2_0; }
 		
 		//conditions+=Condition
@@ -95,103 +106,294 @@ public class DomainmodelGrammarAccess extends AbstractElementFinder.AbstractGram
 		//Condition
 		public RuleCall getConditionsConditionParserRuleCall_2_1_0() { return cConditionsConditionParserRuleCall_2_1_0; }
 		
-		//' when '
+		//'when'
 		public Keyword getWhenKeyword_3() { return cWhenKeyword_3; }
+	}
+	public class StoryElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.example.domainmodel.Domainmodel.Story");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cShipParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cOrdermaterialsParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cQueryitemsParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
-		//action+=Action
-		public Assignment getActionAssignment_4() { return cActionAssignment_4; }
+		//Story:
+		//       Ship | Ordermaterials | Queryitems;
+		@Override public ParserRule getRule() { return rule; }
 		
-		//Action
-		public RuleCall getActionActionParserRuleCall_4_0() { return cActionActionParserRuleCall_4_0; }
+		//Ship | Ordermaterials | Queryitems
+		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//action+=Item
-		public Assignment getActionAssignment_5() { return cActionAssignment_5; }
+		//Ship
+		public RuleCall getShipParserRuleCall_0() { return cShipParserRuleCall_0; }
+		
+		//Ordermaterials
+		public RuleCall getOrdermaterialsParserRuleCall_1() { return cOrdermaterialsParserRuleCall_1; }
+		
+		//Queryitems
+		public RuleCall getQueryitemsParserRuleCall_2() { return cQueryitemsParserRuleCall_2; }
+	}
+	public class ShipElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.example.domainmodel.Domainmodel.Ship");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cShippingKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cItemAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cItemItemParserRuleCall_1_0 = (RuleCall)cItemAssignment_1.eContents().get(0);
+		private final Keyword cToKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cAddressAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cAddressAddressParserRuleCall_3_0 = (RuleCall)cAddressAssignment_3.eContents().get(0);
+		private final Keyword cThenKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cReactionAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cReactionReactionParserRuleCall_5_0 = (RuleCall)cReactionAssignment_5.eContents().get(0);
+		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+		private final Keyword cAndKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Assignment cReactionAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final RuleCall cReactionReactionParserRuleCall_6_1_0 = (RuleCall)cReactionAssignment_6_1.eContents().get(0);
+		
+		//Ship :
+		//    "shipping" item+=Item 'to' address+=Address 'then' reaction+=Reaction ('and' reaction+=Reaction)*
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//"shipping" item+=Item 'to' address+=Address 'then' reaction+=Reaction ('and' reaction+=Reaction)*
+		public Group getGroup() { return cGroup; }
+		
+		//"shipping"
+		public Keyword getShippingKeyword_0() { return cShippingKeyword_0; }
+		
+		//item+=Item
+		public Assignment getItemAssignment_1() { return cItemAssignment_1; }
 		
 		//Item
-		public RuleCall getActionItemParserRuleCall_5_0() { return cActionItemParserRuleCall_5_0; }
+		public RuleCall getItemItemParserRuleCall_1_0() { return cItemItemParserRuleCall_1_0; }
 		
-		//' to '
-		public Keyword getToKeyword_6() { return cToKeyword_6; }
+		//'to'
+		public Keyword getToKeyword_2() { return cToKeyword_2; }
 		
 		//address+=Address
-		public Assignment getAddressAssignment_7() { return cAddressAssignment_7; }
+		public Assignment getAddressAssignment_3() { return cAddressAssignment_3; }
 		
 		//Address
-		public RuleCall getAddressAddressParserRuleCall_7_0() { return cAddressAddressParserRuleCall_7_0; }
+		public RuleCall getAddressAddressParserRuleCall_3_0() { return cAddressAddressParserRuleCall_3_0; }
+		
+		//'then'
+		public Keyword getThenKeyword_4() { return cThenKeyword_4; }
+		
+		//reaction+=Reaction
+		public Assignment getReactionAssignment_5() { return cReactionAssignment_5; }
+		
+		//Reaction
+		public RuleCall getReactionReactionParserRuleCall_5_0() { return cReactionReactionParserRuleCall_5_0; }
+		
+		//('and' reaction+=Reaction)*
+		public Group getGroup_6() { return cGroup_6; }
+		
+		//'and'
+		public Keyword getAndKeyword_6_0() { return cAndKeyword_6_0; }
+		
+		//reaction+=Reaction
+		public Assignment getReactionAssignment_6_1() { return cReactionAssignment_6_1; }
+		
+		//Reaction
+		public RuleCall getReactionReactionParserRuleCall_6_1_0() { return cReactionReactionParserRuleCall_6_1_0; }
+	}
+	public class OrdermaterialsElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.example.domainmodel.Domainmodel.Ordermaterials");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cOrderingKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cMaterialAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cMaterialMaterialParserRuleCall_1_0 = (RuleCall)cMaterialAssignment_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cCommaKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cMaterialAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cMaterialMaterialParserRuleCall_2_1_0 = (RuleCall)cMaterialAssignment_2_1.eContents().get(0);
+		private final Keyword cThenKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cReactionAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cReactionReactionParserRuleCall_4_0 = (RuleCall)cReactionAssignment_4.eContents().get(0);
+		
+		//Ordermaterials :
+		//    "ordering" material+=Material (',' material+=Material)* 'then' reaction+=Reaction
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//"ordering" material+=Material (',' material+=Material)* 'then' reaction+=Reaction
+		public Group getGroup() { return cGroup; }
+		
+		//"ordering"
+		public Keyword getOrderingKeyword_0() { return cOrderingKeyword_0; }
+		
+		//material+=Material
+		public Assignment getMaterialAssignment_1() { return cMaterialAssignment_1; }
+		
+		//Material
+		public RuleCall getMaterialMaterialParserRuleCall_1_0() { return cMaterialMaterialParserRuleCall_1_0; }
+		
+		//(',' material+=Material)*
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//','
+		public Keyword getCommaKeyword_2_0() { return cCommaKeyword_2_0; }
+		
+		//material+=Material
+		public Assignment getMaterialAssignment_2_1() { return cMaterialAssignment_2_1; }
+		
+		//Material
+		public RuleCall getMaterialMaterialParserRuleCall_2_1_0() { return cMaterialMaterialParserRuleCall_2_1_0; }
+		
+		//'then'
+		public Keyword getThenKeyword_3() { return cThenKeyword_3; }
+		
+		//reaction+=Reaction
+		public Assignment getReactionAssignment_4() { return cReactionAssignment_4; }
+		
+		//Reaction
+		public RuleCall getReactionReactionParserRuleCall_4_0() { return cReactionReactionParserRuleCall_4_0; }
+	}
+	public class QueryitemsElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.example.domainmodel.Domainmodel.Queryitems");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cQueryingKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cItemAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cItemItemParserRuleCall_1_0 = (RuleCall)cItemAssignment_1.eContents().get(0);
+		private final Keyword cThenKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cReactionAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cReactionReactionParserRuleCall_3_0 = (RuleCall)cReactionAssignment_3.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cAndKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cReactionAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cReactionReactionParserRuleCall_4_1_0 = (RuleCall)cReactionAssignment_4_1.eContents().get(0);
+		
+		//Queryitems :
+		//    "querying" item+=Item 'then' reaction+=Reaction ('and' reaction+=Reaction)*
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//"querying" item+=Item 'then' reaction+=Reaction ('and' reaction+=Reaction)*
+		public Group getGroup() { return cGroup; }
+		
+		//"querying"
+		public Keyword getQueryingKeyword_0() { return cQueryingKeyword_0; }
+		
+		//item+=Item
+		public Assignment getItemAssignment_1() { return cItemAssignment_1; }
+		
+		//Item
+		public RuleCall getItemItemParserRuleCall_1_0() { return cItemItemParserRuleCall_1_0; }
+		
+		//'then'
+		public Keyword getThenKeyword_2() { return cThenKeyword_2; }
+		
+		//reaction+=Reaction
+		public Assignment getReactionAssignment_3() { return cReactionAssignment_3; }
+		
+		//Reaction
+		public RuleCall getReactionReactionParserRuleCall_3_0() { return cReactionReactionParserRuleCall_3_0; }
+		
+		//('and' reaction+=Reaction)*
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//'and'
+		public Keyword getAndKeyword_4_0() { return cAndKeyword_4_0; }
+		
+		//reaction+=Reaction
+		public Assignment getReactionAssignment_4_1() { return cReactionAssignment_4_1; }
+		
+		//Reaction
+		public RuleCall getReactionReactionParserRuleCall_4_1_0() { return cReactionReactionParserRuleCall_4_1_0; }
 	}
 	public class ItemElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.example.domainmodel.Domainmodel.Item");
-		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_0 = (RuleCall)cNameAssignment.eContents().get(0);
+		private final Assignment cItemAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cItemSTRINGTerminalRuleCall_0 = (RuleCall)cItemAssignment.eContents().get(0);
 		
 		//Item :
-		//    name=ID
+		//    item=STRING
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=ID
-		public Assignment getNameAssignment() { return cNameAssignment; }
+		//item=STRING
+		public Assignment getItemAssignment() { return cItemAssignment; }
 		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_0() { return cNameIDTerminalRuleCall_0; }
+		//STRING
+		public RuleCall getItemSTRINGTerminalRuleCall_0() { return cItemSTRINGTerminalRuleCall_0; }
 	}
 	public class AddressElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.example.domainmodel.Domainmodel.Address");
-		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_0 = (RuleCall)cNameAssignment.eContents().get(0);
+		private final Assignment cAddressAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cAddressSTRINGTerminalRuleCall_0 = (RuleCall)cAddressAssignment.eContents().get(0);
 		
 		//Address :
-		//    name=ID
+		//    address=STRING
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=ID
-		public Assignment getNameAssignment() { return cNameAssignment; }
+		//address=STRING
+		public Assignment getAddressAssignment() { return cAddressAssignment; }
 		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_0() { return cNameIDTerminalRuleCall_0; }
+		//STRING
+		public RuleCall getAddressSTRINGTerminalRuleCall_0() { return cAddressSTRINGTerminalRuleCall_0; }
+	}
+	public class MaterialElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.example.domainmodel.Domainmodel.Material");
+		private final Assignment cMaterialAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cMaterialSTRINGTerminalRuleCall_0 = (RuleCall)cMaterialAssignment.eContents().get(0);
+		
+		//Material :
+		//    material=STRING
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//material=STRING
+		public Assignment getMaterialAssignment() { return cMaterialAssignment; }
+		
+		//STRING
+		public RuleCall getMaterialSTRINGTerminalRuleCall_0() { return cMaterialSTRINGTerminalRuleCall_0; }
 	}
 	public class ConditionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.example.domainmodel.Domainmodel.Condition");
-		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_0 = (RuleCall)cNameAssignment.eContents().get(0);
+		private final Assignment cConditionAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cConditionSTRINGTerminalRuleCall_0 = (RuleCall)cConditionAssignment.eContents().get(0);
 		
 		//Condition :
-		//    name=ID
+		//    condition=STRING
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=ID
-		public Assignment getNameAssignment() { return cNameAssignment; }
+		//condition=STRING
+		public Assignment getConditionAssignment() { return cConditionAssignment; }
 		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_0() { return cNameIDTerminalRuleCall_0; }
+		//STRING
+		public RuleCall getConditionSTRINGTerminalRuleCall_0() { return cConditionSTRINGTerminalRuleCall_0; }
 	}
-	public class ActionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.example.domainmodel.Domainmodel.Action");
-		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_0 = (RuleCall)cNameAssignment.eContents().get(0);
+	public class ReactionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.example.domainmodel.Domainmodel.Reaction");
+		private final Assignment cReactionAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cReactionSTRINGTerminalRuleCall_0 = (RuleCall)cReactionAssignment.eContents().get(0);
 		
-		//Action :
-		//    name=ID
+		//Reaction :
+		//    reaction=STRING
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=ID
-		public Assignment getNameAssignment() { return cNameAssignment; }
+		//reaction=STRING
+		public Assignment getReactionAssignment() { return cReactionAssignment; }
 		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_0() { return cNameIDTerminalRuleCall_0; }
+		//STRING
+		public RuleCall getReactionSTRINGTerminalRuleCall_0() { return cReactionSTRINGTerminalRuleCall_0; }
 	}
 	
 	
 	private final ModelElements pModel;
 	private final DeclarationElements pDeclaration;
+	private final ConditionandActionElements pConditionandAction;
+	private final StoryElements pStory;
 	private final ShipElements pShip;
+	private final OrdermaterialsElements pOrdermaterials;
+	private final QueryitemsElements pQueryitems;
 	private final ItemElements pItem;
 	private final AddressElements pAddress;
+	private final MaterialElements pMaterial;
 	private final ConditionElements pCondition;
-	private final ActionElements pAction;
+	private final ReactionElements pReaction;
 	
 	private final Grammar grammar;
 	
@@ -204,11 +406,16 @@ public class DomainmodelGrammarAccess extends AbstractElementFinder.AbstractGram
 		this.gaTerminals = gaTerminals;
 		this.pModel = new ModelElements();
 		this.pDeclaration = new DeclarationElements();
+		this.pConditionandAction = new ConditionandActionElements();
+		this.pStory = new StoryElements();
 		this.pShip = new ShipElements();
+		this.pOrdermaterials = new OrdermaterialsElements();
+		this.pQueryitems = new QueryitemsElements();
 		this.pItem = new ItemElements();
 		this.pAddress = new AddressElements();
+		this.pMaterial = new MaterialElements();
 		this.pCondition = new ConditionElements();
-		this.pAction = new ActionElements();
+		this.pReaction = new ReactionElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -249,7 +456,8 @@ public class DomainmodelGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//Declaration:
-	//       Ship;
+	//    conditionandaction=ConditionandAction story=Story
+	//;
 	public DeclarationElements getDeclarationAccess() {
 		return pDeclaration;
 	}
@@ -258,8 +466,29 @@ public class DomainmodelGrammarAccess extends AbstractElementFinder.AbstractGram
 		return getDeclarationAccess().getRule();
 	}
 	
+	//ConditionandAction:
+	//    'Given' conditions+=Condition ('and' conditions+=Condition)* 'when'
+	//;
+	public ConditionandActionElements getConditionandActionAccess() {
+		return pConditionandAction;
+	}
+	
+	public ParserRule getConditionandActionRule() {
+		return getConditionandActionAccess().getRule();
+	}
+	
+	//Story:
+	//       Ship | Ordermaterials | Queryitems;
+	public StoryElements getStoryAccess() {
+		return pStory;
+	}
+	
+	public ParserRule getStoryRule() {
+		return getStoryAccess().getRule();
+	}
+	
 	//Ship :
-	//    'Given' conditions+=Condition (" and " conditions+=Condition)* ' when ' action+=Action action+=Item ' to ' address+=Address
+	//    "shipping" item+=Item 'to' address+=Address 'then' reaction+=Reaction ('and' reaction+=Reaction)*
 	//;
 	public ShipElements getShipAccess() {
 		return pShip;
@@ -269,8 +498,30 @@ public class DomainmodelGrammarAccess extends AbstractElementFinder.AbstractGram
 		return getShipAccess().getRule();
 	}
 	
+	//Ordermaterials :
+	//    "ordering" material+=Material (',' material+=Material)* 'then' reaction+=Reaction
+	//;
+	public OrdermaterialsElements getOrdermaterialsAccess() {
+		return pOrdermaterials;
+	}
+	
+	public ParserRule getOrdermaterialsRule() {
+		return getOrdermaterialsAccess().getRule();
+	}
+	
+	//Queryitems :
+	//    "querying" item+=Item 'then' reaction+=Reaction ('and' reaction+=Reaction)*
+	//;
+	public QueryitemsElements getQueryitemsAccess() {
+		return pQueryitems;
+	}
+	
+	public ParserRule getQueryitemsRule() {
+		return getQueryitemsAccess().getRule();
+	}
+	
 	//Item :
-	//    name=ID
+	//    item=STRING
 	//;
 	public ItemElements getItemAccess() {
 		return pItem;
@@ -281,7 +532,7 @@ public class DomainmodelGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//Address :
-	//    name=ID
+	//    address=STRING
 	//;
 	public AddressElements getAddressAccess() {
 		return pAddress;
@@ -291,8 +542,19 @@ public class DomainmodelGrammarAccess extends AbstractElementFinder.AbstractGram
 		return getAddressAccess().getRule();
 	}
 	
+	//Material :
+	//    material=STRING
+	//;
+	public MaterialElements getMaterialAccess() {
+		return pMaterial;
+	}
+	
+	public ParserRule getMaterialRule() {
+		return getMaterialAccess().getRule();
+	}
+	
 	//Condition :
-	//    name=ID
+	//    condition=STRING
 	//;
 	public ConditionElements getConditionAccess() {
 		return pCondition;
@@ -302,15 +564,15 @@ public class DomainmodelGrammarAccess extends AbstractElementFinder.AbstractGram
 		return getConditionAccess().getRule();
 	}
 	
-	//Action :
-	//    name=ID
+	//Reaction :
+	//    reaction=STRING
 	//;
-	public ActionElements getActionAccess() {
-		return pAction;
+	public ReactionElements getReactionAccess() {
+		return pReaction;
 	}
 	
-	public ParserRule getActionRule() {
-		return getActionAccess().getRule();
+	public ParserRule getReactionRule() {
+		return getReactionAccess().getRule();
 	}
 	
 	//terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;

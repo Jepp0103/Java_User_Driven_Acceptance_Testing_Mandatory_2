@@ -42,6 +42,24 @@ public interface DomainmodelFactory extends EFactory
   Declaration createDeclaration();
 
   /**
+   * Returns a new object of class '<em>Conditionand Action</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Conditionand Action</em>'.
+   * @generated
+   */
+  ConditionandAction createConditionandAction();
+
+  /**
+   * Returns a new object of class '<em>Story</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Story</em>'.
+   * @generated
+   */
+  Story createStory();
+
+  /**
    * Returns a new object of class '<em>Ship</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -49,6 +67,24 @@ public interface DomainmodelFactory extends EFactory
    * @generated
    */
   Ship createShip();
+
+  /**
+   * Returns a new object of class '<em>Ordermaterials</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Ordermaterials</em>'.
+   * @generated
+   */
+  Ordermaterials createOrdermaterials();
+
+  /**
+   * Returns a new object of class '<em>Queryitems</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Queryitems</em>'.
+   * @generated
+   */
+  Queryitems createQueryitems();
 
   /**
    * Returns a new object of class '<em>Item</em>'.
@@ -69,6 +105,15 @@ public interface DomainmodelFactory extends EFactory
   Address createAddress();
 
   /**
+   * Returns a new object of class '<em>Material</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Material</em>'.
+   * @generated
+   */
+  Material createMaterial();
+
+  /**
    * Returns a new object of class '<em>Condition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -78,13 +123,13 @@ public interface DomainmodelFactory extends EFactory
   Condition createCondition();
 
   /**
-   * Returns a new object of class '<em>Action</em>'.
+   * Returns a new object of class '<em>Reaction</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Action</em>'.
+   * @return a new object of class '<em>Reaction</em>'.
    * @generated
    */
-  Action createAction();
+  Reaction createReaction();
 
   /**
    * Returns the package supported by this factory.

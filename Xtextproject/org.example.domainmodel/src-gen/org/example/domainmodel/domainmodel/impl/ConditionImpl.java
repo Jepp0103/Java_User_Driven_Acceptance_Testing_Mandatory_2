@@ -21,7 +21,7 @@ import org.example.domainmodel.domainmodel.DomainmodelPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.example.domainmodel.domainmodel.impl.ConditionImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.example.domainmodel.domainmodel.impl.ConditionImpl#getCondition <em>Condition</em>}</li>
  * </ul>
  *
  * @generated
@@ -29,24 +29,24 @@ import org.example.domainmodel.domainmodel.DomainmodelPackage;
 public class ConditionImpl extends MinimalEObjectImpl.Container implements Condition
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The default value of the '{@link #getCondition() <em>Condition</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getCondition()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
+  protected static final String CONDITION_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getCondition() <em>Condition</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getCondition()
    * @generated
    * @ordered
    */
-  protected String name = NAME_EDEFAULT;
+  protected String condition = CONDITION_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -75,9 +75,9 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
    * @generated
    */
   @Override
-  public String getName()
+  public String getCondition()
   {
-    return name;
+    return condition;
   }
 
   /**
@@ -86,12 +86,12 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
    * @generated
    */
   @Override
-  public void setName(String newName)
+  public void setCondition(String newCondition)
   {
-    String oldName = name;
-    name = newName;
+    String oldCondition = condition;
+    condition = newCondition;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DomainmodelPackage.CONDITION__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, DomainmodelPackage.CONDITION__CONDITION, oldCondition, condition));
   }
 
   /**
@@ -104,8 +104,8 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
   {
     switch (featureID)
     {
-      case DomainmodelPackage.CONDITION__NAME:
-        return getName();
+      case DomainmodelPackage.CONDITION__CONDITION:
+        return getCondition();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -120,8 +120,8 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
   {
     switch (featureID)
     {
-      case DomainmodelPackage.CONDITION__NAME:
-        setName((String)newValue);
+      case DomainmodelPackage.CONDITION__CONDITION:
+        setCondition((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -137,8 +137,8 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
   {
     switch (featureID)
     {
-      case DomainmodelPackage.CONDITION__NAME:
-        setName(NAME_EDEFAULT);
+      case DomainmodelPackage.CONDITION__CONDITION:
+        setCondition(CONDITION_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -154,8 +154,8 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
   {
     switch (featureID)
     {
-      case DomainmodelPackage.CONDITION__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case DomainmodelPackage.CONDITION__CONDITION:
+        return CONDITION_EDEFAULT == null ? condition != null : !CONDITION_EDEFAULT.equals(condition);
     }
     return super.eIsSet(featureID);
   }
@@ -171,8 +171,8 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (name: ");
-    result.append(name);
+    result.append(" (condition: ");
+    result.append(condition);
     result.append(')');
     return result.toString();
   }

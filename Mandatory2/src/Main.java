@@ -67,7 +67,7 @@ public class Main {
         
         String humantext = "If ";
         for (int i = 0; i < whenList.getLength(); i++) {
-        	if (i==1) {humantext+=" and ";}
+        	if (i>0) {humantext+=" and ";}
             node = whenList.item(i);
             humantext+=node.getTextContent();
         }
@@ -78,7 +78,7 @@ public class Main {
         
         humantext += ", and ";
         for (int i = 0; i < givenList.getLength(); i++) {
-        	if (i==1) {humantext+=" and ";}
+        	if (i>0) {humantext+=" and ";}
             node = givenList.item(i);
             humantext+=node.getTextContent();
         }
@@ -86,7 +86,7 @@ public class Main {
         
         humantext+= ", then ";
         for (int i = 0; i < thenList.getLength(); i++) {
-        	if (i==1) {humantext+=" and ";}
+        	if (i>0) {humantext+=" and ";}
             node = thenList.item(i);
             humantext+=node.getTextContent();
 	
@@ -104,20 +104,20 @@ public class Main {
         
         String humantext = "If ";
         for (int i = 0; i < whenList.getLength(); i++) {
-        	if (i==1) {humantext+=" and ";}
+        	if (i>0) {humantext+=" and ";}
             node = whenList.item(i);
             humantext+=node.getTextContent();
         }
         humantext+=" ";
         for (int i = 0; i < materialList.getLength(); i++) {
-        	if (i==1) {humantext+=" and ";}
+        	if (i>0) {humantext+=" and ";}
             node = materialList.item(i);
             humantext+=node.getTextContent();
         }
         
         humantext += ", and ";
         for (int i = 0; i < givenList.getLength(); i++) {
-        	if (i==1) {humantext+=" and ";}
+        	if (i>0) {humantext+=" and ";}
             node = givenList.item(i);
             humantext+=node.getTextContent();
         }
@@ -125,7 +125,7 @@ public class Main {
         
         humantext+= ", then ";
         for (int i = 0; i < thenList.getLength(); i++) {
-        	if (i==1) {humantext+=" and ";}
+        	if (i>0) {humantext+=" and ";}
             node = thenList.item(i);
             humantext+=node.getTextContent();
         }
@@ -142,7 +142,7 @@ public class Main {
         
         String humantext = "If ";
         for (int i = 0; i < whenList.getLength(); i++) {
-        	if (i==1) {humantext+=" and ";}
+        	if (i>0) {humantext+=" and ";}
             node = whenList.item(i);
             humantext+=node.getTextContent();
         }
@@ -156,7 +156,7 @@ public class Main {
         
         humantext += ", and ";
         for (int i = 0; i < givenList.getLength(); i++) {
-        	if (i==1) {humantext+=" and ";}
+        	if (i>0) {humantext+=" and ";}
             node = givenList.item(i);
             humantext+=node.getTextContent();
         }
@@ -167,7 +167,7 @@ public class Main {
             humantext+=node.getTextContent();
         }
         for (int i = 0; i < thenList.getLength(); i++) {
-        	if (i==1) {humantext+=" and ";}
+        	if (i>0) {humantext+=" and ";}
             node = thenList.item(i);
             humantext+=node.getTextContent();
         }

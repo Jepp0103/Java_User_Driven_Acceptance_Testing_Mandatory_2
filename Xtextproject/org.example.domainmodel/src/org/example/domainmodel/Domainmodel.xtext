@@ -7,26 +7,38 @@ Model:
     declarations+=Declaration*;
   
 Declaration:
+	conditionandaction=ConditionandAction story=Story
+;
+  
+ConditionandAction:
+	'Given' conditions+=Condition ('and' conditions+=Condition)* 'when'
+;
+  
+Story:
    	Ship | Ordermaterials | Queryitems;
 
 Ship :
-	'Given' conditions+=Condition (' and ' conditions+=Condition)* ' when ' action+=Action item+=Item ' to ' address+=Address 
+	"shipping" item+=Item 'to' address+=Address 'then' reaction+=Reaction ('and' reaction+=Reaction)*
 ;
 Ordermaterials :
-	"a"
+	"ordering" material+=Material (',' material+=Material)* 'then' reaction+=Reaction
 ;
 Queryitems :
-	"b"
+    "querying" item+=Item 'then' reaction+=Reaction ('and' reaction+=Reaction)*
 ;
+
 Item :
-	name=ID
+	item=STRING
 ;
 Address :
-	name=ID
+	address=STRING
+;
+Material :
+	material=STRING
 ;
 Condition :
-	name=ID
+	condition=STRING
 ;
-Action :
-	name=ID
+Reaction :
+    reaction=STRING
 ;

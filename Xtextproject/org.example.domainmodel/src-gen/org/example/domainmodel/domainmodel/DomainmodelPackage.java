@@ -96,13 +96,87 @@ public interface DomainmodelPackage extends EPackage
   int DECLARATION = 1;
 
   /**
+   * The feature id for the '<em><b>Conditionandaction</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARATION__CONDITIONANDACTION = 0;
+
+  /**
+   * The feature id for the '<em><b>Story</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARATION__STORY = 1;
+
+  /**
    * The number of structural features of the '<em>Declaration</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DECLARATION_FEATURE_COUNT = 0;
+  int DECLARATION_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.example.domainmodel.domainmodel.impl.ConditionandActionImpl <em>Conditionand Action</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.example.domainmodel.domainmodel.impl.ConditionandActionImpl
+   * @see org.example.domainmodel.domainmodel.impl.DomainmodelPackageImpl#getConditionandAction()
+   * @generated
+   */
+  int CONDITIONAND_ACTION = 2;
+
+  /**
+   * The feature id for the '<em><b>Conditions</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONDITIONAND_ACTION__CONDITIONS = 0;
+
+  /**
+   * The number of structural features of the '<em>Conditionand Action</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONDITIONAND_ACTION_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.example.domainmodel.domainmodel.impl.StoryImpl <em>Story</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.example.domainmodel.domainmodel.impl.StoryImpl
+   * @see org.example.domainmodel.domainmodel.impl.DomainmodelPackageImpl#getStory()
+   * @generated
+   */
+  int STORY = 3;
+
+  /**
+   * The feature id for the '<em><b>Reaction</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STORY__REACTION = 0;
+
+  /**
+   * The number of structural features of the '<em>Story</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STORY_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.example.domainmodel.domainmodel.impl.ShipImpl <em>Ship</em>}' class.
@@ -112,25 +186,25 @@ public interface DomainmodelPackage extends EPackage
    * @see org.example.domainmodel.domainmodel.impl.DomainmodelPackageImpl#getShip()
    * @generated
    */
-  int SHIP = 2;
+  int SHIP = 4;
 
   /**
-   * The feature id for the '<em><b>Conditions</b></em>' containment reference list.
+   * The feature id for the '<em><b>Reaction</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SHIP__CONDITIONS = DECLARATION_FEATURE_COUNT + 0;
+  int SHIP__REACTION = STORY__REACTION;
 
   /**
-   * The feature id for the '<em><b>Action</b></em>' containment reference list.
+   * The feature id for the '<em><b>Item</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SHIP__ACTION = DECLARATION_FEATURE_COUNT + 1;
+  int SHIP__ITEM = STORY_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Address</b></em>' containment reference list.
@@ -139,7 +213,7 @@ public interface DomainmodelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SHIP__ADDRESS = DECLARATION_FEATURE_COUNT + 2;
+  int SHIP__ADDRESS = STORY_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Ship</em>' class.
@@ -148,7 +222,81 @@ public interface DomainmodelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SHIP_FEATURE_COUNT = DECLARATION_FEATURE_COUNT + 3;
+  int SHIP_FEATURE_COUNT = STORY_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.example.domainmodel.domainmodel.impl.OrdermaterialsImpl <em>Ordermaterials</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.example.domainmodel.domainmodel.impl.OrdermaterialsImpl
+   * @see org.example.domainmodel.domainmodel.impl.DomainmodelPackageImpl#getOrdermaterials()
+   * @generated
+   */
+  int ORDERMATERIALS = 5;
+
+  /**
+   * The feature id for the '<em><b>Reaction</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ORDERMATERIALS__REACTION = STORY__REACTION;
+
+  /**
+   * The feature id for the '<em><b>Material</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ORDERMATERIALS__MATERIAL = STORY_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Ordermaterials</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ORDERMATERIALS_FEATURE_COUNT = STORY_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.example.domainmodel.domainmodel.impl.QueryitemsImpl <em>Queryitems</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.example.domainmodel.domainmodel.impl.QueryitemsImpl
+   * @see org.example.domainmodel.domainmodel.impl.DomainmodelPackageImpl#getQueryitems()
+   * @generated
+   */
+  int QUERYITEMS = 6;
+
+  /**
+   * The feature id for the '<em><b>Reaction</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QUERYITEMS__REACTION = STORY__REACTION;
+
+  /**
+   * The feature id for the '<em><b>Item</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QUERYITEMS__ITEM = STORY_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Queryitems</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QUERYITEMS_FEATURE_COUNT = STORY_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.example.domainmodel.domainmodel.impl.ItemImpl <em>Item</em>}' class.
@@ -158,16 +306,16 @@ public interface DomainmodelPackage extends EPackage
    * @see org.example.domainmodel.domainmodel.impl.DomainmodelPackageImpl#getItem()
    * @generated
    */
-  int ITEM = 3;
+  int ITEM = 7;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The feature id for the '<em><b>Item</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ITEM__NAME = 0;
+  int ITEM__ITEM = 0;
 
   /**
    * The number of structural features of the '<em>Item</em>' class.
@@ -186,16 +334,16 @@ public interface DomainmodelPackage extends EPackage
    * @see org.example.domainmodel.domainmodel.impl.DomainmodelPackageImpl#getAddress()
    * @generated
    */
-  int ADDRESS = 4;
+  int ADDRESS = 8;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The feature id for the '<em><b>Address</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ADDRESS__NAME = 0;
+  int ADDRESS__ADDRESS = 0;
 
   /**
    * The number of structural features of the '<em>Address</em>' class.
@@ -207,6 +355,34 @@ public interface DomainmodelPackage extends EPackage
   int ADDRESS_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link org.example.domainmodel.domainmodel.impl.MaterialImpl <em>Material</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.example.domainmodel.domainmodel.impl.MaterialImpl
+   * @see org.example.domainmodel.domainmodel.impl.DomainmodelPackageImpl#getMaterial()
+   * @generated
+   */
+  int MATERIAL = 9;
+
+  /**
+   * The feature id for the '<em><b>Material</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MATERIAL__MATERIAL = 0;
+
+  /**
+   * The number of structural features of the '<em>Material</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MATERIAL_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link org.example.domainmodel.domainmodel.impl.ConditionImpl <em>Condition</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -214,16 +390,16 @@ public interface DomainmodelPackage extends EPackage
    * @see org.example.domainmodel.domainmodel.impl.DomainmodelPackageImpl#getCondition()
    * @generated
    */
-  int CONDITION = 5;
+  int CONDITION = 10;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The feature id for the '<em><b>Condition</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONDITION__NAME = 0;
+  int CONDITION__CONDITION = 0;
 
   /**
    * The number of structural features of the '<em>Condition</em>' class.
@@ -235,32 +411,32 @@ public interface DomainmodelPackage extends EPackage
   int CONDITION_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link org.example.domainmodel.domainmodel.impl.ActionImpl <em>Action</em>}' class.
+   * The meta object id for the '{@link org.example.domainmodel.domainmodel.impl.ReactionImpl <em>Reaction</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.example.domainmodel.domainmodel.impl.ActionImpl
-   * @see org.example.domainmodel.domainmodel.impl.DomainmodelPackageImpl#getAction()
+   * @see org.example.domainmodel.domainmodel.impl.ReactionImpl
+   * @see org.example.domainmodel.domainmodel.impl.DomainmodelPackageImpl#getReaction()
    * @generated
    */
-  int ACTION = 6;
+  int REACTION = 11;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The feature id for the '<em><b>Reaction</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ACTION__NAME = 0;
+  int REACTION__REACTION = 0;
 
   /**
-   * The number of structural features of the '<em>Action</em>' class.
+   * The number of structural features of the '<em>Reaction</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ACTION_FEATURE_COUNT = 1;
+  int REACTION_FEATURE_COUNT = 1;
 
 
   /**
@@ -295,6 +471,70 @@ public interface DomainmodelPackage extends EPackage
   EClass getDeclaration();
 
   /**
+   * Returns the meta object for the containment reference '{@link org.example.domainmodel.domainmodel.Declaration#getConditionandaction <em>Conditionandaction</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Conditionandaction</em>'.
+   * @see org.example.domainmodel.domainmodel.Declaration#getConditionandaction()
+   * @see #getDeclaration()
+   * @generated
+   */
+  EReference getDeclaration_Conditionandaction();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.example.domainmodel.domainmodel.Declaration#getStory <em>Story</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Story</em>'.
+   * @see org.example.domainmodel.domainmodel.Declaration#getStory()
+   * @see #getDeclaration()
+   * @generated
+   */
+  EReference getDeclaration_Story();
+
+  /**
+   * Returns the meta object for class '{@link org.example.domainmodel.domainmodel.ConditionandAction <em>Conditionand Action</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Conditionand Action</em>'.
+   * @see org.example.domainmodel.domainmodel.ConditionandAction
+   * @generated
+   */
+  EClass getConditionandAction();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.example.domainmodel.domainmodel.ConditionandAction#getConditions <em>Conditions</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Conditions</em>'.
+   * @see org.example.domainmodel.domainmodel.ConditionandAction#getConditions()
+   * @see #getConditionandAction()
+   * @generated
+   */
+  EReference getConditionandAction_Conditions();
+
+  /**
+   * Returns the meta object for class '{@link org.example.domainmodel.domainmodel.Story <em>Story</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Story</em>'.
+   * @see org.example.domainmodel.domainmodel.Story
+   * @generated
+   */
+  EClass getStory();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.example.domainmodel.domainmodel.Story#getReaction <em>Reaction</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Reaction</em>'.
+   * @see org.example.domainmodel.domainmodel.Story#getReaction()
+   * @see #getStory()
+   * @generated
+   */
+  EReference getStory_Reaction();
+
+  /**
    * Returns the meta object for class '{@link org.example.domainmodel.domainmodel.Ship <em>Ship</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -305,26 +545,15 @@ public interface DomainmodelPackage extends EPackage
   EClass getShip();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.example.domainmodel.domainmodel.Ship#getConditions <em>Conditions</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.example.domainmodel.domainmodel.Ship#getItem <em>Item</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Conditions</em>'.
-   * @see org.example.domainmodel.domainmodel.Ship#getConditions()
+   * @return the meta object for the containment reference list '<em>Item</em>'.
+   * @see org.example.domainmodel.domainmodel.Ship#getItem()
    * @see #getShip()
    * @generated
    */
-  EReference getShip_Conditions();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link org.example.domainmodel.domainmodel.Ship#getAction <em>Action</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Action</em>'.
-   * @see org.example.domainmodel.domainmodel.Ship#getAction()
-   * @see #getShip()
-   * @generated
-   */
-  EReference getShip_Action();
+  EReference getShip_Item();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.example.domainmodel.domainmodel.Ship#getAddress <em>Address</em>}'.
@@ -338,6 +567,48 @@ public interface DomainmodelPackage extends EPackage
   EReference getShip_Address();
 
   /**
+   * Returns the meta object for class '{@link org.example.domainmodel.domainmodel.Ordermaterials <em>Ordermaterials</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Ordermaterials</em>'.
+   * @see org.example.domainmodel.domainmodel.Ordermaterials
+   * @generated
+   */
+  EClass getOrdermaterials();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.example.domainmodel.domainmodel.Ordermaterials#getMaterial <em>Material</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Material</em>'.
+   * @see org.example.domainmodel.domainmodel.Ordermaterials#getMaterial()
+   * @see #getOrdermaterials()
+   * @generated
+   */
+  EReference getOrdermaterials_Material();
+
+  /**
+   * Returns the meta object for class '{@link org.example.domainmodel.domainmodel.Queryitems <em>Queryitems</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Queryitems</em>'.
+   * @see org.example.domainmodel.domainmodel.Queryitems
+   * @generated
+   */
+  EClass getQueryitems();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.example.domainmodel.domainmodel.Queryitems#getItem <em>Item</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Item</em>'.
+   * @see org.example.domainmodel.domainmodel.Queryitems#getItem()
+   * @see #getQueryitems()
+   * @generated
+   */
+  EReference getQueryitems_Item();
+
+  /**
    * Returns the meta object for class '{@link org.example.domainmodel.domainmodel.Item <em>Item</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -348,15 +619,15 @@ public interface DomainmodelPackage extends EPackage
   EClass getItem();
 
   /**
-   * Returns the meta object for the attribute '{@link org.example.domainmodel.domainmodel.Item#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link org.example.domainmodel.domainmodel.Item#getItem <em>Item</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.example.domainmodel.domainmodel.Item#getName()
+   * @return the meta object for the attribute '<em>Item</em>'.
+   * @see org.example.domainmodel.domainmodel.Item#getItem()
    * @see #getItem()
    * @generated
    */
-  EAttribute getItem_Name();
+  EAttribute getItem_Item();
 
   /**
    * Returns the meta object for class '{@link org.example.domainmodel.domainmodel.Address <em>Address</em>}'.
@@ -369,15 +640,36 @@ public interface DomainmodelPackage extends EPackage
   EClass getAddress();
 
   /**
-   * Returns the meta object for the attribute '{@link org.example.domainmodel.domainmodel.Address#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link org.example.domainmodel.domainmodel.Address#getAddress <em>Address</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.example.domainmodel.domainmodel.Address#getName()
+   * @return the meta object for the attribute '<em>Address</em>'.
+   * @see org.example.domainmodel.domainmodel.Address#getAddress()
    * @see #getAddress()
    * @generated
    */
-  EAttribute getAddress_Name();
+  EAttribute getAddress_Address();
+
+  /**
+   * Returns the meta object for class '{@link org.example.domainmodel.domainmodel.Material <em>Material</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Material</em>'.
+   * @see org.example.domainmodel.domainmodel.Material
+   * @generated
+   */
+  EClass getMaterial();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.example.domainmodel.domainmodel.Material#getMaterial <em>Material</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Material</em>'.
+   * @see org.example.domainmodel.domainmodel.Material#getMaterial()
+   * @see #getMaterial()
+   * @generated
+   */
+  EAttribute getMaterial_Material();
 
   /**
    * Returns the meta object for class '{@link org.example.domainmodel.domainmodel.Condition <em>Condition</em>}'.
@@ -390,36 +682,36 @@ public interface DomainmodelPackage extends EPackage
   EClass getCondition();
 
   /**
-   * Returns the meta object for the attribute '{@link org.example.domainmodel.domainmodel.Condition#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link org.example.domainmodel.domainmodel.Condition#getCondition <em>Condition</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.example.domainmodel.domainmodel.Condition#getName()
+   * @return the meta object for the attribute '<em>Condition</em>'.
+   * @see org.example.domainmodel.domainmodel.Condition#getCondition()
    * @see #getCondition()
    * @generated
    */
-  EAttribute getCondition_Name();
+  EAttribute getCondition_Condition();
 
   /**
-   * Returns the meta object for class '{@link org.example.domainmodel.domainmodel.Action <em>Action</em>}'.
+   * Returns the meta object for class '{@link org.example.domainmodel.domainmodel.Reaction <em>Reaction</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Action</em>'.
-   * @see org.example.domainmodel.domainmodel.Action
+   * @return the meta object for class '<em>Reaction</em>'.
+   * @see org.example.domainmodel.domainmodel.Reaction
    * @generated
    */
-  EClass getAction();
+  EClass getReaction();
 
   /**
-   * Returns the meta object for the attribute '{@link org.example.domainmodel.domainmodel.Action#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link org.example.domainmodel.domainmodel.Reaction#getReaction <em>Reaction</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.example.domainmodel.domainmodel.Action#getName()
-   * @see #getAction()
+   * @return the meta object for the attribute '<em>Reaction</em>'.
+   * @see org.example.domainmodel.domainmodel.Reaction#getReaction()
+   * @see #getReaction()
    * @generated
    */
-  EAttribute getAction_Name();
+  EAttribute getReaction_Reaction();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -473,6 +765,58 @@ public interface DomainmodelPackage extends EPackage
     EClass DECLARATION = eINSTANCE.getDeclaration();
 
     /**
+     * The meta object literal for the '<em><b>Conditionandaction</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DECLARATION__CONDITIONANDACTION = eINSTANCE.getDeclaration_Conditionandaction();
+
+    /**
+     * The meta object literal for the '<em><b>Story</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DECLARATION__STORY = eINSTANCE.getDeclaration_Story();
+
+    /**
+     * The meta object literal for the '{@link org.example.domainmodel.domainmodel.impl.ConditionandActionImpl <em>Conditionand Action</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.example.domainmodel.domainmodel.impl.ConditionandActionImpl
+     * @see org.example.domainmodel.domainmodel.impl.DomainmodelPackageImpl#getConditionandAction()
+     * @generated
+     */
+    EClass CONDITIONAND_ACTION = eINSTANCE.getConditionandAction();
+
+    /**
+     * The meta object literal for the '<em><b>Conditions</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONDITIONAND_ACTION__CONDITIONS = eINSTANCE.getConditionandAction_Conditions();
+
+    /**
+     * The meta object literal for the '{@link org.example.domainmodel.domainmodel.impl.StoryImpl <em>Story</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.example.domainmodel.domainmodel.impl.StoryImpl
+     * @see org.example.domainmodel.domainmodel.impl.DomainmodelPackageImpl#getStory()
+     * @generated
+     */
+    EClass STORY = eINSTANCE.getStory();
+
+    /**
+     * The meta object literal for the '<em><b>Reaction</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STORY__REACTION = eINSTANCE.getStory_Reaction();
+
+    /**
      * The meta object literal for the '{@link org.example.domainmodel.domainmodel.impl.ShipImpl <em>Ship</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -483,20 +827,12 @@ public interface DomainmodelPackage extends EPackage
     EClass SHIP = eINSTANCE.getShip();
 
     /**
-     * The meta object literal for the '<em><b>Conditions</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Item</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference SHIP__CONDITIONS = eINSTANCE.getShip_Conditions();
-
-    /**
-     * The meta object literal for the '<em><b>Action</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SHIP__ACTION = eINSTANCE.getShip_Action();
+    EReference SHIP__ITEM = eINSTANCE.getShip_Item();
 
     /**
      * The meta object literal for the '<em><b>Address</b></em>' containment reference list feature.
@@ -505,6 +841,42 @@ public interface DomainmodelPackage extends EPackage
      * @generated
      */
     EReference SHIP__ADDRESS = eINSTANCE.getShip_Address();
+
+    /**
+     * The meta object literal for the '{@link org.example.domainmodel.domainmodel.impl.OrdermaterialsImpl <em>Ordermaterials</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.example.domainmodel.domainmodel.impl.OrdermaterialsImpl
+     * @see org.example.domainmodel.domainmodel.impl.DomainmodelPackageImpl#getOrdermaterials()
+     * @generated
+     */
+    EClass ORDERMATERIALS = eINSTANCE.getOrdermaterials();
+
+    /**
+     * The meta object literal for the '<em><b>Material</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ORDERMATERIALS__MATERIAL = eINSTANCE.getOrdermaterials_Material();
+
+    /**
+     * The meta object literal for the '{@link org.example.domainmodel.domainmodel.impl.QueryitemsImpl <em>Queryitems</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.example.domainmodel.domainmodel.impl.QueryitemsImpl
+     * @see org.example.domainmodel.domainmodel.impl.DomainmodelPackageImpl#getQueryitems()
+     * @generated
+     */
+    EClass QUERYITEMS = eINSTANCE.getQueryitems();
+
+    /**
+     * The meta object literal for the '<em><b>Item</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference QUERYITEMS__ITEM = eINSTANCE.getQueryitems_Item();
 
     /**
      * The meta object literal for the '{@link org.example.domainmodel.domainmodel.impl.ItemImpl <em>Item</em>}' class.
@@ -517,12 +889,12 @@ public interface DomainmodelPackage extends EPackage
     EClass ITEM = eINSTANCE.getItem();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Item</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ITEM__NAME = eINSTANCE.getItem_Name();
+    EAttribute ITEM__ITEM = eINSTANCE.getItem_Item();
 
     /**
      * The meta object literal for the '{@link org.example.domainmodel.domainmodel.impl.AddressImpl <em>Address</em>}' class.
@@ -535,12 +907,30 @@ public interface DomainmodelPackage extends EPackage
     EClass ADDRESS = eINSTANCE.getAddress();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Address</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ADDRESS__NAME = eINSTANCE.getAddress_Name();
+    EAttribute ADDRESS__ADDRESS = eINSTANCE.getAddress_Address();
+
+    /**
+     * The meta object literal for the '{@link org.example.domainmodel.domainmodel.impl.MaterialImpl <em>Material</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.example.domainmodel.domainmodel.impl.MaterialImpl
+     * @see org.example.domainmodel.domainmodel.impl.DomainmodelPackageImpl#getMaterial()
+     * @generated
+     */
+    EClass MATERIAL = eINSTANCE.getMaterial();
+
+    /**
+     * The meta object literal for the '<em><b>Material</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MATERIAL__MATERIAL = eINSTANCE.getMaterial_Material();
 
     /**
      * The meta object literal for the '{@link org.example.domainmodel.domainmodel.impl.ConditionImpl <em>Condition</em>}' class.
@@ -553,30 +943,30 @@ public interface DomainmodelPackage extends EPackage
     EClass CONDITION = eINSTANCE.getCondition();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Condition</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute CONDITION__NAME = eINSTANCE.getCondition_Name();
+    EAttribute CONDITION__CONDITION = eINSTANCE.getCondition_Condition();
 
     /**
-     * The meta object literal for the '{@link org.example.domainmodel.domainmodel.impl.ActionImpl <em>Action</em>}' class.
+     * The meta object literal for the '{@link org.example.domainmodel.domainmodel.impl.ReactionImpl <em>Reaction</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.example.domainmodel.domainmodel.impl.ActionImpl
-     * @see org.example.domainmodel.domainmodel.impl.DomainmodelPackageImpl#getAction()
+     * @see org.example.domainmodel.domainmodel.impl.ReactionImpl
+     * @see org.example.domainmodel.domainmodel.impl.DomainmodelPackageImpl#getReaction()
      * @generated
      */
-    EClass ACTION = eINSTANCE.getAction();
+    EClass REACTION = eINSTANCE.getReaction();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Reaction</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ACTION__NAME = eINSTANCE.getAction_Name();
+    EAttribute REACTION__REACTION = eINSTANCE.getReaction_Reaction();
 
   }
 

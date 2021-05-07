@@ -16,9 +16,15 @@ import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequence
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.example.domainmodel.domainmodel.Address;
 import org.example.domainmodel.domainmodel.Condition;
+import org.example.domainmodel.domainmodel.ConditionandAction;
+import org.example.domainmodel.domainmodel.Declaration;
 import org.example.domainmodel.domainmodel.DomainmodelPackage;
 import org.example.domainmodel.domainmodel.Item;
+import org.example.domainmodel.domainmodel.Material;
 import org.example.domainmodel.domainmodel.Model;
+import org.example.domainmodel.domainmodel.Ordermaterials;
+import org.example.domainmodel.domainmodel.Queryitems;
+import org.example.domainmodel.domainmodel.Reaction;
 import org.example.domainmodel.domainmodel.Ship;
 import org.example.domainmodel.services.DomainmodelGrammarAccess;
 
@@ -36,20 +42,35 @@ public class DomainmodelSemanticSequencer extends AbstractDelegatingSemanticSequ
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == DomainmodelPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case DomainmodelPackage.ACTION:
-				sequence_Action(context, (org.example.domainmodel.domainmodel.Action) semanticObject); 
-				return; 
 			case DomainmodelPackage.ADDRESS:
 				sequence_Address(context, (Address) semanticObject); 
 				return; 
 			case DomainmodelPackage.CONDITION:
 				sequence_Condition(context, (Condition) semanticObject); 
 				return; 
+			case DomainmodelPackage.CONDITIONAND_ACTION:
+				sequence_ConditionandAction(context, (ConditionandAction) semanticObject); 
+				return; 
+			case DomainmodelPackage.DECLARATION:
+				sequence_Declaration(context, (Declaration) semanticObject); 
+				return; 
 			case DomainmodelPackage.ITEM:
 				sequence_Item(context, (Item) semanticObject); 
 				return; 
+			case DomainmodelPackage.MATERIAL:
+				sequence_Material(context, (Material) semanticObject); 
+				return; 
 			case DomainmodelPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
+				return; 
+			case DomainmodelPackage.ORDERMATERIALS:
+				sequence_Ordermaterials(context, (Ordermaterials) semanticObject); 
+				return; 
+			case DomainmodelPackage.QUERYITEMS:
+				sequence_Queryitems(context, (Queryitems) semanticObject); 
+				return; 
+			case DomainmodelPackage.REACTION:
+				sequence_Reaction(context, (Reaction) semanticObject); 
 				return; 
 			case DomainmodelPackage.SHIP:
 				sequence_Ship(context, (Ship) semanticObject); 
@@ -61,36 +82,18 @@ public class DomainmodelSemanticSequencer extends AbstractDelegatingSemanticSequ
 	
 	/**
 	 * Contexts:
-	 *     Action returns Action
-	 *
-	 * Constraint:
-	 *     name=ID
-	 */
-	protected void sequence_Action(ISerializationContext context, org.example.domainmodel.domainmodel.Action semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, DomainmodelPackage.Literals.ACTION__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DomainmodelPackage.Literals.ACTION__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getActionAccess().getNameIDTerminalRuleCall_0(), semanticObject.getName());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     Address returns Address
 	 *
 	 * Constraint:
-	 *     name=ID
+	 *     address=STRING
 	 */
 	protected void sequence_Address(ISerializationContext context, Address semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, DomainmodelPackage.Literals.ADDRESS__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DomainmodelPackage.Literals.ADDRESS__NAME));
+			if (transientValues.isValueTransient(semanticObject, DomainmodelPackage.Literals.ADDRESS__ADDRESS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DomainmodelPackage.Literals.ADDRESS__ADDRESS));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getAddressAccess().getNameIDTerminalRuleCall_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getAddressAccess().getAddressSTRINGTerminalRuleCall_0(), semanticObject.getAddress());
 		feeder.finish();
 	}
 	
@@ -100,15 +103,48 @@ public class DomainmodelSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     Condition returns Condition
 	 *
 	 * Constraint:
-	 *     name=ID
+	 *     condition=STRING
 	 */
 	protected void sequence_Condition(ISerializationContext context, Condition semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, DomainmodelPackage.Literals.CONDITION__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DomainmodelPackage.Literals.CONDITION__NAME));
+			if (transientValues.isValueTransient(semanticObject, DomainmodelPackage.Literals.CONDITION__CONDITION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DomainmodelPackage.Literals.CONDITION__CONDITION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getConditionAccess().getNameIDTerminalRuleCall_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getConditionAccess().getConditionSTRINGTerminalRuleCall_0(), semanticObject.getCondition());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ConditionandAction returns ConditionandAction
+	 *
+	 * Constraint:
+	 *     (conditions+=Condition conditions+=Condition*)
+	 */
+	protected void sequence_ConditionandAction(ISerializationContext context, ConditionandAction semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Declaration returns Declaration
+	 *
+	 * Constraint:
+	 *     (conditionandaction=ConditionandAction story=Story)
+	 */
+	protected void sequence_Declaration(ISerializationContext context, Declaration semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, DomainmodelPackage.Literals.DECLARATION__CONDITIONANDACTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DomainmodelPackage.Literals.DECLARATION__CONDITIONANDACTION));
+			if (transientValues.isValueTransient(semanticObject, DomainmodelPackage.Literals.DECLARATION__STORY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DomainmodelPackage.Literals.DECLARATION__STORY));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getDeclarationAccess().getConditionandactionConditionandActionParserRuleCall_0_0(), semanticObject.getConditionandaction());
+		feeder.accept(grammarAccess.getDeclarationAccess().getStoryStoryParserRuleCall_1_0(), semanticObject.getStory());
 		feeder.finish();
 	}
 	
@@ -118,15 +154,33 @@ public class DomainmodelSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     Item returns Item
 	 *
 	 * Constraint:
-	 *     name=ID
+	 *     item=STRING
 	 */
 	protected void sequence_Item(ISerializationContext context, Item semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, DomainmodelPackage.Literals.ITEM__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DomainmodelPackage.Literals.ITEM__NAME));
+			if (transientValues.isValueTransient(semanticObject, DomainmodelPackage.Literals.ITEM__ITEM) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DomainmodelPackage.Literals.ITEM__ITEM));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getItemAccess().getNameIDTerminalRuleCall_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getItemAccess().getItemSTRINGTerminalRuleCall_0(), semanticObject.getItem());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Material returns Material
+	 *
+	 * Constraint:
+	 *     material=STRING
+	 */
+	protected void sequence_Material(ISerializationContext context, Material semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, DomainmodelPackage.Literals.MATERIAL__MATERIAL) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DomainmodelPackage.Literals.MATERIAL__MATERIAL));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getMaterialAccess().getMaterialSTRINGTerminalRuleCall_0(), semanticObject.getMaterial());
 		feeder.finish();
 	}
 	
@@ -145,11 +199,55 @@ public class DomainmodelSemanticSequencer extends AbstractDelegatingSemanticSequ
 	
 	/**
 	 * Contexts:
-	 *     Declaration returns Ship
+	 *     Story returns Ordermaterials
+	 *     Ordermaterials returns Ordermaterials
+	 *
+	 * Constraint:
+	 *     (material+=Material material+=Material* reaction+=Reaction)
+	 */
+	protected void sequence_Ordermaterials(ISerializationContext context, Ordermaterials semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Story returns Queryitems
+	 *     Queryitems returns Queryitems
+	 *
+	 * Constraint:
+	 *     (item+=Item reaction+=Reaction reaction+=Reaction*)
+	 */
+	protected void sequence_Queryitems(ISerializationContext context, Queryitems semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Reaction returns Reaction
+	 *
+	 * Constraint:
+	 *     reaction=STRING
+	 */
+	protected void sequence_Reaction(ISerializationContext context, Reaction semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, DomainmodelPackage.Literals.REACTION__REACTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DomainmodelPackage.Literals.REACTION__REACTION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getReactionAccess().getReactionSTRINGTerminalRuleCall_0(), semanticObject.getReaction());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Story returns Ship
 	 *     Ship returns Ship
 	 *
 	 * Constraint:
-	 *     (conditions+=Condition conditions+=Condition* action+=Action action+=Item address+=Address)
+	 *     (item+=Item address+=Address reaction+=Reaction reaction+=Reaction*)
 	 */
 	protected void sequence_Ship(ISerializationContext context, Ship semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

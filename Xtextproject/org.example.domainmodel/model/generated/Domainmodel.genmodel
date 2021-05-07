@@ -9,23 +9,40 @@
     <genClasses ecoreClass="Domainmodel.ecore#//Model">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Domainmodel.ecore#//Model/declarations"/>
     </genClasses>
-    <genClasses ecoreClass="Domainmodel.ecore#//Declaration"/>
+    <genClasses ecoreClass="Domainmodel.ecore#//Declaration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Domainmodel.ecore#//Declaration/conditionandaction"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Domainmodel.ecore#//Declaration/story"/>
+    </genClasses>
+    <genClasses ecoreClass="Domainmodel.ecore#//ConditionandAction">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Domainmodel.ecore#//ConditionandAction/conditions"/>
+    </genClasses>
+    <genClasses ecoreClass="Domainmodel.ecore#//Story">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Domainmodel.ecore#//Story/reaction"/>
+    </genClasses>
     <genClasses ecoreClass="Domainmodel.ecore#//Ship">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Domainmodel.ecore#//Ship/conditions"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Domainmodel.ecore#//Ship/action"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Domainmodel.ecore#//Ship/item"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Domainmodel.ecore#//Ship/address"/>
     </genClasses>
+    <genClasses ecoreClass="Domainmodel.ecore#//Ordermaterials">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Domainmodel.ecore#//Ordermaterials/material"/>
+    </genClasses>
+    <genClasses ecoreClass="Domainmodel.ecore#//Queryitems">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Domainmodel.ecore#//Queryitems/item"/>
+    </genClasses>
     <genClasses ecoreClass="Domainmodel.ecore#//Item">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Domainmodel.ecore#//Item/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Domainmodel.ecore#//Item/item"/>
     </genClasses>
     <genClasses ecoreClass="Domainmodel.ecore#//Address">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Domainmodel.ecore#//Address/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Domainmodel.ecore#//Address/address"/>
+    </genClasses>
+    <genClasses ecoreClass="Domainmodel.ecore#//Material">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Domainmodel.ecore#//Material/material"/>
     </genClasses>
     <genClasses ecoreClass="Domainmodel.ecore#//Condition">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Domainmodel.ecore#//Condition/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Domainmodel.ecore#//Condition/condition"/>
     </genClasses>
-    <genClasses ecoreClass="Domainmodel.ecore#//Action">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Domainmodel.ecore#//Action/name"/>
+    <genClasses ecoreClass="Domainmodel.ecore#//Reaction">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Domainmodel.ecore#//Reaction/reaction"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

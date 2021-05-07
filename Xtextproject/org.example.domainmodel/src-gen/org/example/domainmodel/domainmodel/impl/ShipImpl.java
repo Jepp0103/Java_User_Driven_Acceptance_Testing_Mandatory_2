@@ -10,15 +10,14 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.example.domainmodel.domainmodel.Address;
-import org.example.domainmodel.domainmodel.Condition;
 import org.example.domainmodel.domainmodel.DomainmodelPackage;
+import org.example.domainmodel.domainmodel.Item;
 import org.example.domainmodel.domainmodel.Ship;
 
 /**
@@ -29,34 +28,23 @@ import org.example.domainmodel.domainmodel.Ship;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.example.domainmodel.domainmodel.impl.ShipImpl#getConditions <em>Conditions</em>}</li>
- *   <li>{@link org.example.domainmodel.domainmodel.impl.ShipImpl#getAction <em>Action</em>}</li>
+ *   <li>{@link org.example.domainmodel.domainmodel.impl.ShipImpl#getItem <em>Item</em>}</li>
  *   <li>{@link org.example.domainmodel.domainmodel.impl.ShipImpl#getAddress <em>Address</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ShipImpl extends DeclarationImpl implements Ship
+public class ShipImpl extends StoryImpl implements Ship
 {
   /**
-   * The cached value of the '{@link #getConditions() <em>Conditions</em>}' containment reference list.
+   * The cached value of the '{@link #getItem() <em>Item</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getConditions()
+   * @see #getItem()
    * @generated
    * @ordered
    */
-  protected EList<Condition> conditions;
-
-  /**
-   * The cached value of the '{@link #getAction() <em>Action</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getAction()
-   * @generated
-   * @ordered
-   */
-  protected EList<EObject> action;
+  protected EList<Item> item;
 
   /**
    * The cached value of the '{@link #getAddress() <em>Address</em>}' containment reference list.
@@ -95,28 +83,13 @@ public class ShipImpl extends DeclarationImpl implements Ship
    * @generated
    */
   @Override
-  public EList<Condition> getConditions()
+  public EList<Item> getItem()
   {
-    if (conditions == null)
+    if (item == null)
     {
-      conditions = new EObjectContainmentEList<Condition>(Condition.class, this, DomainmodelPackage.SHIP__CONDITIONS);
+      item = new EObjectContainmentEList<Item>(Item.class, this, DomainmodelPackage.SHIP__ITEM);
     }
-    return conditions;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EList<EObject> getAction()
-  {
-    if (action == null)
-    {
-      action = new EObjectContainmentEList<EObject>(EObject.class, this, DomainmodelPackage.SHIP__ACTION);
-    }
-    return action;
+    return item;
   }
 
   /**
@@ -144,10 +117,8 @@ public class ShipImpl extends DeclarationImpl implements Ship
   {
     switch (featureID)
     {
-      case DomainmodelPackage.SHIP__CONDITIONS:
-        return ((InternalEList<?>)getConditions()).basicRemove(otherEnd, msgs);
-      case DomainmodelPackage.SHIP__ACTION:
-        return ((InternalEList<?>)getAction()).basicRemove(otherEnd, msgs);
+      case DomainmodelPackage.SHIP__ITEM:
+        return ((InternalEList<?>)getItem()).basicRemove(otherEnd, msgs);
       case DomainmodelPackage.SHIP__ADDRESS:
         return ((InternalEList<?>)getAddress()).basicRemove(otherEnd, msgs);
     }
@@ -164,10 +135,8 @@ public class ShipImpl extends DeclarationImpl implements Ship
   {
     switch (featureID)
     {
-      case DomainmodelPackage.SHIP__CONDITIONS:
-        return getConditions();
-      case DomainmodelPackage.SHIP__ACTION:
-        return getAction();
+      case DomainmodelPackage.SHIP__ITEM:
+        return getItem();
       case DomainmodelPackage.SHIP__ADDRESS:
         return getAddress();
     }
@@ -185,13 +154,9 @@ public class ShipImpl extends DeclarationImpl implements Ship
   {
     switch (featureID)
     {
-      case DomainmodelPackage.SHIP__CONDITIONS:
-        getConditions().clear();
-        getConditions().addAll((Collection<? extends Condition>)newValue);
-        return;
-      case DomainmodelPackage.SHIP__ACTION:
-        getAction().clear();
-        getAction().addAll((Collection<? extends EObject>)newValue);
+      case DomainmodelPackage.SHIP__ITEM:
+        getItem().clear();
+        getItem().addAll((Collection<? extends Item>)newValue);
         return;
       case DomainmodelPackage.SHIP__ADDRESS:
         getAddress().clear();
@@ -211,11 +176,8 @@ public class ShipImpl extends DeclarationImpl implements Ship
   {
     switch (featureID)
     {
-      case DomainmodelPackage.SHIP__CONDITIONS:
-        getConditions().clear();
-        return;
-      case DomainmodelPackage.SHIP__ACTION:
-        getAction().clear();
+      case DomainmodelPackage.SHIP__ITEM:
+        getItem().clear();
         return;
       case DomainmodelPackage.SHIP__ADDRESS:
         getAddress().clear();
@@ -234,10 +196,8 @@ public class ShipImpl extends DeclarationImpl implements Ship
   {
     switch (featureID)
     {
-      case DomainmodelPackage.SHIP__CONDITIONS:
-        return conditions != null && !conditions.isEmpty();
-      case DomainmodelPackage.SHIP__ACTION:
-        return action != null && !action.isEmpty();
+      case DomainmodelPackage.SHIP__ITEM:
+        return item != null && !item.isEmpty();
       case DomainmodelPackage.SHIP__ADDRESS:
         return address != null && !address.isEmpty();
     }

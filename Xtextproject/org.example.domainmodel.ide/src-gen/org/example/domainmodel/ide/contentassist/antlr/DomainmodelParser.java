@@ -31,18 +31,36 @@ public class DomainmodelParser extends AbstractContentAssistParser {
 		}
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, DomainmodelGrammarAccess grammarAccess) {
+			builder.put(grammarAccess.getStoryAccess().getAlternatives(), "rule__Story__Alternatives");
+			builder.put(grammarAccess.getDeclarationAccess().getGroup(), "rule__Declaration__Group__0");
+			builder.put(grammarAccess.getConditionandActionAccess().getGroup(), "rule__ConditionandAction__Group__0");
+			builder.put(grammarAccess.getConditionandActionAccess().getGroup_2(), "rule__ConditionandAction__Group_2__0");
 			builder.put(grammarAccess.getShipAccess().getGroup(), "rule__Ship__Group__0");
-			builder.put(grammarAccess.getShipAccess().getGroup_2(), "rule__Ship__Group_2__0");
+			builder.put(grammarAccess.getShipAccess().getGroup_6(), "rule__Ship__Group_6__0");
+			builder.put(grammarAccess.getOrdermaterialsAccess().getGroup(), "rule__Ordermaterials__Group__0");
+			builder.put(grammarAccess.getOrdermaterialsAccess().getGroup_2(), "rule__Ordermaterials__Group_2__0");
+			builder.put(grammarAccess.getQueryitemsAccess().getGroup(), "rule__Queryitems__Group__0");
+			builder.put(grammarAccess.getQueryitemsAccess().getGroup_4(), "rule__Queryitems__Group_4__0");
 			builder.put(grammarAccess.getModelAccess().getDeclarationsAssignment(), "rule__Model__DeclarationsAssignment");
-			builder.put(grammarAccess.getShipAccess().getConditionsAssignment_1(), "rule__Ship__ConditionsAssignment_1");
-			builder.put(grammarAccess.getShipAccess().getConditionsAssignment_2_1(), "rule__Ship__ConditionsAssignment_2_1");
-			builder.put(grammarAccess.getShipAccess().getActionAssignment_4(), "rule__Ship__ActionAssignment_4");
-			builder.put(grammarAccess.getShipAccess().getActionAssignment_5(), "rule__Ship__ActionAssignment_5");
-			builder.put(grammarAccess.getShipAccess().getAddressAssignment_7(), "rule__Ship__AddressAssignment_7");
-			builder.put(grammarAccess.getItemAccess().getNameAssignment(), "rule__Item__NameAssignment");
-			builder.put(grammarAccess.getAddressAccess().getNameAssignment(), "rule__Address__NameAssignment");
-			builder.put(grammarAccess.getConditionAccess().getNameAssignment(), "rule__Condition__NameAssignment");
-			builder.put(grammarAccess.getActionAccess().getNameAssignment(), "rule__Action__NameAssignment");
+			builder.put(grammarAccess.getDeclarationAccess().getConditionandactionAssignment_0(), "rule__Declaration__ConditionandactionAssignment_0");
+			builder.put(grammarAccess.getDeclarationAccess().getStoryAssignment_1(), "rule__Declaration__StoryAssignment_1");
+			builder.put(grammarAccess.getConditionandActionAccess().getConditionsAssignment_1(), "rule__ConditionandAction__ConditionsAssignment_1");
+			builder.put(grammarAccess.getConditionandActionAccess().getConditionsAssignment_2_1(), "rule__ConditionandAction__ConditionsAssignment_2_1");
+			builder.put(grammarAccess.getShipAccess().getItemAssignment_1(), "rule__Ship__ItemAssignment_1");
+			builder.put(grammarAccess.getShipAccess().getAddressAssignment_3(), "rule__Ship__AddressAssignment_3");
+			builder.put(grammarAccess.getShipAccess().getReactionAssignment_5(), "rule__Ship__ReactionAssignment_5");
+			builder.put(grammarAccess.getShipAccess().getReactionAssignment_6_1(), "rule__Ship__ReactionAssignment_6_1");
+			builder.put(grammarAccess.getOrdermaterialsAccess().getMaterialAssignment_1(), "rule__Ordermaterials__MaterialAssignment_1");
+			builder.put(grammarAccess.getOrdermaterialsAccess().getMaterialAssignment_2_1(), "rule__Ordermaterials__MaterialAssignment_2_1");
+			builder.put(grammarAccess.getOrdermaterialsAccess().getReactionAssignment_4(), "rule__Ordermaterials__ReactionAssignment_4");
+			builder.put(grammarAccess.getQueryitemsAccess().getItemAssignment_1(), "rule__Queryitems__ItemAssignment_1");
+			builder.put(grammarAccess.getQueryitemsAccess().getReactionAssignment_3(), "rule__Queryitems__ReactionAssignment_3");
+			builder.put(grammarAccess.getQueryitemsAccess().getReactionAssignment_4_1(), "rule__Queryitems__ReactionAssignment_4_1");
+			builder.put(grammarAccess.getItemAccess().getItemAssignment(), "rule__Item__ItemAssignment");
+			builder.put(grammarAccess.getAddressAccess().getAddressAssignment(), "rule__Address__AddressAssignment");
+			builder.put(grammarAccess.getMaterialAccess().getMaterialAssignment(), "rule__Material__MaterialAssignment");
+			builder.put(grammarAccess.getConditionAccess().getConditionAssignment(), "rule__Condition__ConditionAssignment");
+			builder.put(grammarAccess.getReactionAccess().getReactionAssignment(), "rule__Reaction__ReactionAssignment");
 		}
 	}
 	
